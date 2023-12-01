@@ -1,0 +1,49 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/19.8.1/bin/node /Users/artemshulga/.yarn/bin/yarn.js dev
+
+PATH: 
+  /opt/homebrew/opt/php@7.4/bin:/opt/homebrew/Cellar/icu4c/bin:/Users/artemshulga/.yarn/bin:/Users/artemshulga/.config/yarn/global/node_modules/.bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/artemshulga/Desktop/starter/node_modules/.bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  19.8.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/artemshulga/Desktop/starter/package.json: Expected double-quoted property name in JSON at position 202
+      at JSON.parse (<anonymous>)
+      at /Users/artemshulga/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/artemshulga/.yarn/lib/cli.js:310:30)
+      at /Users/artemshulga/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "starter",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "serve": "webpack serve --open --mode development",
+      "dev": "webpack --mode development",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "html-webpack-plugin": "^5.5.3",
+      "webpack": "^5.89.0",
+      "webpack-cli": "^5.1.4",
+      "webpack-dev-server": "^4.15.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
