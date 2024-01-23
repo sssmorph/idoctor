@@ -6,7 +6,7 @@
 
 
 body {
-  font-family: Montserrat;
+  font-family: Inter, sans-serif;
   font-size:14px;
   color: $text-color;
   background-color:$bg-color;
@@ -15,64 +15,478 @@ body {
 .main-container {
   max-width: $container;
   margin: auto;
+  padding: 40px;
+  @include respond($mobile){
+    max-width: $mobile;
+    padding: 12px;
+    }
 }
-
-.block-title {
-  padding:0 $block-padding;
-  font-size: 40px;
+// название раздела
+h2{
   font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom:50px;
-  @include respond($laptop){
-    font-size:36px;
-    margin-bottom:40px;
-  }
-  @include respond($tablet){
-    @include resp-font(36px,24px,$tablet,$min-viewport);
-    margin-bottom:25px;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 50px;
+  color: $black-text;
+  letter-spacing: -1.44px;
+  @include respond($mobile){
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    margin-bottom: 16px;
   }
 }
 
-.advantages{
-  padding:0 $block-padding;
-  gap:25px;
-  @include respond($laptop){
-    flex-wrap:wrap;
+h3{
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: $black-text;
+  line-height: 130%;
+  letter-spacing: -0.4px;
+  @include respond($mobile){
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: -0.26px;
+    margin-bottom: 4px;
   }
-  @include respond($tablet){
-    gap:15px;
+}
+
+// кнопки слайдера
+.block-title-right{
+  align-items: flex-start;
+  gap: var(--8, 8px);
+  @include respond($mobile){
+    gap: var(--4, 4px)
   }
-  .advantagesItem{
-    padding:20px;
-    line-height: 1.5;
-    border-radius: 20px;
-    background: #fff;
-    font-size:16px;
-    width:210px;
-    height: 190px;
-    img{
-      height: 66px;
-      margin-bottom: 15px;
-    }
-    @include respond($container){
-      font-size:14px;
-    }
-    @include respond($laptop){
-      width:calc(33.33% - 25px*2/3);
-      font-size:16px;
-    }
-    @include respond($tablet){
-      width:calc(50% - 15px/2);
-      flex-grow: 1;
-    }
+  button{
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+    border-radius: 90px;
+    background-color: rgba(255, 255, 255, 1);
     @include respond($mobile){
-      padding:20px 15px;
-      height: 150px;
-      img{
-        height: 50px;
-      }
-      @include resp-font(15px,13px,$mobile,$min-viewport);
+      width: 34px;
+      height: 34px;
+      padding: 12px;
+    }
+    span{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+  }
+}
+
+.items-block{
+  display: grid;
+  grid-template-columns:repeat(10,1fr);
+  gap:32px;
+  margin-bottom: 32px;
+  overflow: hidden;
+  @include respond($mobile){
+    max-width: 336px;
+    max-height: 147px;
+    margin-bottom:16px
+  }
+}
+.items-block__item{
+  max-width: 376px;
+  max-height: 528px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+  @include respond($mobile){
+    max-width: 336px;
+    height: 147px;
+    padding: 16px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 100px 188px;
+    column-gap: 16px;
+    grid-row: auto;
+  }
+}
+// Картинка товара, кружки 
+
+.card-header{
+  @include respond($mobile){
+    grid-row: span 2;
+  }
+  img{
+    border-radius: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    object-fit: cover;
+    @include respond($mobile){
+      width: 100px;
+      height: 100px;
+      margin:0;
+      border-radius: 6px;
     }
   }
+  .circle-container{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    gap:4px;
+    @include respond($mobile){
+      top:6px;
+      left: 32px;
+      width: 62px;
+    }
+      .circle-green{
+        padding: 4px;
+        height: 32px;
+        width: 32px;
+        border-radius: 90px;
+        position: relative;
+        background-color: rgba(61, 192, 0, 1);
+        @include respond($mobile){
+          width: 18px;
+          height: 18px;
+          padding: 2.25px;
+          border-radius: 50.625px;
+        }
+        span{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 10px;
+        }
+      }
+      .circle-yellow{
+        padding: 4px;
+        height: 32px;
+        width: 32px;
+        border-radius: 90px;
+        position: relative;
+        background-color: rgba(254, 206, 0, 1);
+        position: relative;
+        @include respond($mobile){
+          width: 18px;
+          height: 18px;
+          padding: 2.25px;
+          border-radius: 50.625px;
+        }
+        span{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $black-text;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 100%;
+          letter-spacing: -0.6px;
+          font-family: Inter, sans-serif;
+          @include respond($mobile){
+            font-size: 6.75px;
+            line-height: 97%;
+            letter-spacing: -0.337px;
+          }
+        }
+      }
+      .circle-red{
+        padding: 4px;
+        height: 32px;
+        width: 32px;
+        border-radius: 90px;
+        background-color: rgba(229, 7, 7, 1);
+        position: relative;
+        @include respond($mobile){
+          width: 18px;
+          height: 18px;
+          padding: 2.25px;
+          border-radius: 50.625px;
+          
+        }
+        span{
+          font-size: 10px;
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+  }
+
+// Название, состав, характеристика
+.card-content{
+  padding: 0 32px;
+  color:$grey-text;
+  margin-bottom: 24px;
+  @include respond($mobile){
+    padding: 0;
+    margin-bottom: 12px;
+    }
+  p{
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    @include respond($mobile){
+      font-size: 9px;
+      margin-bottom: 8px;
+    }
+  }
+  .short-information{
+    gap:8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    @include respond($mobile){
+      gap:4px;
+      font-size: 9px;
+    }
+    li:last-child{
+      margin-left: auto;
+      @include respond($mobile){
+      margin-left: 0;
+      }
+    }
+    li{
+      background-color: rgba(246, 246, 248, 1);
+      padding: 8px;
+      border-radius: 8px;
+      @include respond($mobile){
+        padding: 4px;
+        border-radius: 4px;
+      }
+      span{
+        font-family: Inter, sans-serif;
+      }
+    }
+  }
+}
+
+// Ценники, кнопки корзины, изменения штук
+.card-footer{
+  font-family: Inter, sans-serif;
+  display: flex;
+  padding: 0 32px 32px;
+  @include respond($mobile){
+    padding: 0;
+    grid-column: 2;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    height: 32px;
+  }
+  .price-container{
+    flex-direction: column;
+    align-items: flex-start;
+    gap:4px;
+    .price-normal{
+      color: $grey-text;
+      text-decoration: line-through;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      @include respond($mobile){
+        font-size: 11px;
+      }
+  }
+    .price-discount{
+      color: $black-text;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 100%;
+      @include respond($mobile){
+        font-size:11px;
+        display: none;
+      }
+    }
+  }
+  button{
+    height: 56px;
+    width: 146px;
+    padding: 16px 20px;
+    border-radius: 90px;
+    border: 1px solid var(--02-general-black, #21201F);
+    margin-left: auto;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 105%;
+    align-self: center;
+    
+    @include respond($mobile){
+      padding: 8px 12px;
+      height: 32px;
+      width: 78px;
+      align-items: center;
+      font-size: 11px;
+      margin: 0;
+      margin-right: 10px;
+    }
+    .price-discount{
+      display: none;
+      @include respond($mobile){
+        display: inline;
+      }
+    }
+    span:first-child{
+      margin-right: 8px;
+      @include respond($mobile){
+        margin-right: 4px;
+      }
+    }
+    span:last-child{
+      @include respond($mobile){
+        display: none;
+      }
+    }
+  }
+  button:hover{
+    background: var(--02-general-gradient-yellow, linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%));
+    border:0;
+  }
+  .in-basket{
+    width: 56px;
+    height: 56px;
+    margin-left:8px;
+    background: var(--02-general-gradient-yellow, linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%));
+    border:0;
+    position: relative;
+    span{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    span:last-child{
+      display: none;
+    }
+  }
+  .count-in-basket{
+    color: $black-text;
+    font-size: 15px;
+    width: 144px;
+    height: 56px;
+    padding: 16px 20px;
+    gap: var(--12, 12px);
+    background: var(--03-primary-grey-100, #F6F6F8);
+    border-radius: 90px;
+    margin-left: auto;
+    button{
+      border: 0;
+      padding: 0;
+      background: var(--03-primary-grey-100, #F6F6F8);
+    }
+
+  }
+}
+// линия скроллинга
+.scroll-line{
+  height: 6px;
+  border-radius: 20px;
+  background: var(--02-general-white, rgba(255, 255, 255, 1));
+  margin-bottom: 112px;
+  .scroll-line-active{
+    width: 528px;
+    background: var(--02-general-gradient-yellow, linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%));
+    border-radius: 20px;
+  }
+}
+
+//  раздел наборов
+.package-block{
+  .items-block{
+    display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2,1fr);
+  gap:32px;
+  }
+  
+}
+
+//  подключение икомуна
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-basket:before {
+  content: "\e900";
+}
+.icon-telegram:before {
+  content: "\e901";
+  color: #656b80;
+}
+.icon-whatsup:before {
+  content: "\e902";
+  color: #656b80;
+}
+.icon-percent:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-vk:before {
+  content: "\e904";
+  color: #656b80;
+}
+.icon-user-gray:before {
+  content: "\e905";
+  color: #9498a6;
+}
+.icon-pepper:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-geo:before {
+  content: "\e907";
+  color: #fece00;
+}
+.icon-watch:before {
+  content: "\e908";
+  color: #fece00;
+}
+.icon-phone:before {
+  content: "\e909";
+  color: #fece00;
+}
+.icon-user-white:before {
+  content: "\e90a";
+  color: #fff;
+}
+.icon-sale .path1:before {
+  content: "\e90b";
+  color: rgb(254, 206, 0);
+}
+.icon-sale .path2:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-minus:before {
+  content: "\e90d";
+}
+.icon-plus:before {
+  content: "\e90e";
+}
+.icon-Symbol:before {
+  content: "\e90f";
+  color: #9498a6;
+}
+.icon-arrowr:before {
+  content: "\e910";
+}
+.icon-arrowl:before {
+  content: "\e911";
+}
+.icon-longarrow:before {
+  content: "\e912";
 }

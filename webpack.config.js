@@ -8,10 +8,13 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash].js',
-        assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
     },
     module: {
         rules: [
+            {
+                test: /\.(jpe?g|svg|png|gif|ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+                type: 'asset/resource',
+            },
             {
                 test: /\.js$/,
                 use: 'babel-loader',
@@ -40,6 +43,7 @@ module.exports = {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
+           
         ],
     },
     plugins: [

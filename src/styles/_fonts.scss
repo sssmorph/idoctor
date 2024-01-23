@@ -1,62 +1,48 @@
-$path:'../fonts/montserrat';
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Thin.woff2") format("woff2"), url("#{$path}/Montserrat-Thin.ttf") format("truetype");
-  font-weight: 100;
+
+/* inter-regular - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
   font-style: normal;
-  font-display: swap;
-}
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-ExtraLight.woff2") format("woff2"), url("#{$path}/Montserrat-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Light.woff2") format("woff2"), url("#{$path}/Montserrat-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Regular.woff2") format("woff2"), url("#{$path}/Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  src: url('../fonts/inter-v13-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* inter-500 - cyrillic_latin */
 @font-face {
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Medium.woff2") format("woff2"), url("#{$path}/Montserrat-Medium.ttf") format("truetype");
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  src: url('../fonts/inter-v13-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* inter-600 - cyrillic_latin */
 @font-face {
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-SemiBold.woff2") format("woff2"), url("#{$path}/Montserrat-SemiBold.ttf") format("truetype");
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  src: url('../fonts/inter-v13-cyrillic_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Bold.woff2") format("woff2"), url("#{$path}/Montserrat-Bold.ttf") format("truetype");
+/* inter-700 - cyrillic_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
+  src: url('../fonts/inter-v13-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-ExtraBold.woff2") format("woff2"), url("#{$path}/Montserrat-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot');
+  src:  url('../fonts/icomoon.eot') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg') format('svg');
+  font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
-@font-face{
-  font-family: Montserrat;
-  src: url("#{$path}/Montserrat-Black.woff2") format("woff2"), url("#{$path}/Montserrat-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
+
+
 
