@@ -8,7 +8,7 @@ h2.block-title.d-flex.jb.fsb
             span.icon-arrowr
 -
     var items = [
-        {title: 'Филадельфия Классическая', 
+        {title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -20,7 +20,7 @@ h2.block-title.d-flex.jb.fsb
         status_new: '',
         status_discount: '',
         status_hot: '',
-        },{title: 'Филадельфия Классическая', 
+        },{title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -32,7 +32,7 @@ h2.block-title.d-flex.jb.fsb
         status_new: '',
         status_discount: '',
         status_hot: '',
-        },{title: 'Филадельфия Классическая', 
+        },{title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -44,7 +44,7 @@ h2.block-title.d-flex.jb.fsb
         status_new: '',
         status_discount: '',
         status_hot: '',
-        },{title: 'Филадельфия Классическая', 
+        },{title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -56,7 +56,7 @@ h2.block-title.d-flex.jb.fsb
         status_new: '',
         status_discount: '',
         status_hot: '',
-        },{title: 'Филадельфия Классическая', 
+        },{title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -68,7 +68,7 @@ h2.block-title.d-flex.jb.fsb
         status_new: '',
         status_discount: '',
         status_hot: '',
-        },{title: 'Филадельфия Классическая', 
+        },{title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050г",
@@ -83,7 +83,7 @@ h2.block-title.d-flex.jb.fsb
         }
     ]
         //- первый вид карточки
-.items-block
+.offers-block
   each val, index in items
     .items-block__item
         .card-header.d-flex.relative.inter
@@ -91,7 +91,7 @@ h2.block-title.d-flex.jb.fsb
             .circle-container.d-flex.jb.absolute
                 .circle-green
                     span.icon-percent
-                .circle-yellow 
+                .circle-yellow
                     span new
                 .circle-red
                     span.icon-pepper
@@ -101,18 +101,18 @@ h2.block-title.d-flex.jb.fsb
             ul.d-flex.short-information
                 li #{val.weigt}
                 li #{val.quantity}
-                li.icon-user-gray 
+                li.icon-user-gray
                     span #{val.persons}
-                li.icon-Symbol 
+                li.icon-Symbol
                     span #{val.kkal}
-        .card-footer
-            .price-container.d-flex.jc
-                p.price-discount #{val.discount_price}
-                p.price-normal #{val.normal_price}
-            button(type="button")
+        .card-footer.d-flex.ac
+            .price-container
+                div.price-discount #{val.discount_price}
+                div.price-normal #{val.normal_price}
+            button.base-button
                 span.icon-basket
-                span.price-discount #{val.discount_price}
-                span В корзину
+                span.price #{val.discount_price}
+                span.title В корзину
     //- второй вид карточки
   each val, index in items
     .items-block__item
@@ -121,7 +121,7 @@ h2.block-title.d-flex.jb.fsb
             .circle-container.d-flex.jb.absolute
                 .circle-green
                     span.icon-percent
-                .circle-yellow 
+                .circle-yellow
                     span new
                 .circle-red
                     span.icon-pepper
@@ -131,24 +131,22 @@ h2.block-title.d-flex.jb.fsb
             ul.d-flex.short-information
                 li #{val.weigt}
                 li #{val.quantity}
-                li.icon-user-gray 
+                li.icon-user-gray
                     span #{val.persons}
-                li.icon-Symbol 
+                li.icon-Symbol
                     span #{val.kkal}
         .card-footer
             .price-container.d-flex.jc
                 p.price-discount #{val.discount_price}
                 p.price-normal #{val.normal_price}
-                
+
             .count-in-basket.d-flex.jc.ac
                 button.icon-minus
                 span.fsb 1шт
                 button.icon-plus
-            button(type="button").in-basket
+            button.in-basket.base-button
                 span.icon-basket
                 span В корзину
-.scroll-line.d-flex
-    .scroll-line-active
 
 h2.block-title.d-flex.fsb
     .block-title-left.ac.mr16 Наборы
@@ -160,13 +158,13 @@ h2.block-title.d-flex.fsb
 .package-block
     .items-block
         each val, index in items
-            .items-block__item
+            .items-block__item(class=(index>4 ? "hidden" : ''))
                 .card-header.d-flex.relative.inter
                     img(src=require('../images/'+val.image+'.png'))
                     .circle-container.d-flex.jb.absolute
                         .circle-green
                             span.icon-percent
-                        .circle-yellow 
+                        .circle-yellow
                             span new
                         .circle-red
                             span.icon-pepper
@@ -176,49 +174,19 @@ h2.block-title.d-flex.fsb
                     ul.d-flex.short-information
                         li #{val.weigt}
                         li #{val.quantity}
-                        li.icon-user-gray 
+                        li.icon-user-gray
                             span #{val.persons}
-                        li.icon-Symbol 
+                        li.icon-Symbol
                             span #{val.kkal}
                 .card-footer
                     .price-container.d-flex.jc
                         p.price-discount #{val.discount_price}
                         p.price-normal #{val.normal_price}
-                    button(type="button")
-                        span.icon-basket
-                        span.price-discount #{val.discount_price}
-                        span В корзину
-            //- второй вид карточки
-        each val, index in items
-            .items-block__item
-                .card-header.d-flex.relative.inter
-                    img(src=require('../images/'+val.image+'.png'))
-                    .circle-container.d-flex.jb.absolute
-                        .circle-green
-                            span.icon-percent
-                        .circle-yellow 
-                            span new
-                        .circle-red
-                            span.icon-pepper
-                .card-content
-                    h3 #{val.title}
-                    p.mb24 #{val.description}
-                    ul.d-flex.short-information
-                        li #{val.weigt}
-                        li #{val.quantity}
-                        li.icon-user-gray 
-                            span #{val.persons}
-                        li.icon-Symbol 
-                            span #{val.kkal}
-                .card-footer
-                    .price-container.d-flex.jc
-                        p.price-discount #{val.discount_price}
-                        p.price-normal #{val.normal_price}
-                        
+
                     .count-in-basket.d-flex.jc.ac
                         button.icon-minus
                         span.fsb 1шт
                         button.icon-plus
-                    button(type="button").in-basket
+                    button.base-button.in-basket
                         span.icon-basket
                         span В корзину

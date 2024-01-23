@@ -1,0 +1,11 @@
+.base-button{
+    border: 1px solid #21201F;
+    font-weight: 600;
+    font-size: 15px;
+    transition: .15s background-color ease-in-out;
+    cursor: pointer;
+    &:hover{
+        border-color: transparent;
+        background:  linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+    }
+}
