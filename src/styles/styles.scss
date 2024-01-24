@@ -11,13 +11,15 @@ body {
   color: $text-color;
   background-color:$bg-color;
 }
-
+button{
+  cursor: pointer;
+}
 .main-container {
   max-width: $container;
   margin: auto;
-  padding: 40px;
+  padding: 0 40px;
   @include respond($mobile){
-    padding: 12px;
+    padding: 0 12px;
   }
 }
 // название раздела
@@ -28,13 +30,14 @@ h2{
   margin-bottom: 50px;
   color: $black-text;
   letter-spacing: -1.44px;
+
   @include respond($mobile){
     font-size: 18px;
     letter-spacing: -0.72px;
     margin-bottom: 16px;
   }
 }
-
+//  Название товара
 h3{
   font-weight: 500;
   font-size: 20px;
@@ -42,6 +45,9 @@ h3{
   color: $black-text;
   line-height: 130%;
   letter-spacing: -0.4px;
+  @include respond($large){
+    font-size: 15px;
+  }
   @include respond($mobile){
     font-size: 13px;
     line-height: 120%;
@@ -53,45 +59,29 @@ h3{
 // кнопки слайдера
 .block-title-right{
   align-items: flex-start;
-  gap: var(--8, 8px);
+  gap: 8px;
   @include respond($mobile){
-    gap: var(--4, 4px)
-  }
-  button{
-    position: relative;
-    width: 48px;
-    height: 48px;
-    padding: 16px;
-    border-radius: 90px;
-    background-color: rgba(255, 255, 255, 1);
-    @include respond($mobile){
-      width: 34px;
-      height: 34px;
-      padding: 12px;
-    }
-    span{
-      position: absolute;
-      top:50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-  }
+    gap: 4px;
+  }    
 }
 
+//  выгодные предложения
 .offers-block{
   display: grid;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(4, 1fr);
   gap:32px;
   margin-bottom: 32px;
-  .items-block__item{
-    width: 375px;
+  @include respond($large){
+    gap:16px;
+  }
+  @include respond($desktop){
+    grid-template-columns: repeat(3,1fr);
   }
   @include respond($mobile){
-    margin-bottom:16px
+    gap: 16px;
+    margin-bottom:16px;
   }
   overflow:auto;
-  padding-bottom: 32px;
   &::-webkit-scrollbar {
     height: 6px;
   }
@@ -100,6 +90,11 @@ h3{
   }
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+  }
+  @include respond($mobile){
+    &::-webkit-scrollbar{
+      display:none;
+    }
   }
 }
 .items-block__item{
@@ -110,11 +105,10 @@ h3{
   border-radius: 20px;
   box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
   @include respond($mobile){
-    height: 147px;
     padding: 16px;
     border-radius: 16px;
     display: grid;
-    grid-template-columns: 100px 188px;
+    grid-template-columns: 100px 1fr;
     column-gap: 16px;
     grid-row: auto;
   }
@@ -123,10 +117,11 @@ h3{
 
 .card-header{
   @include respond($mobile){
-    grid-row: span 2;
+
   }
-  img{
+  .product-image{
     max-width: 100%;
+    height: auto;
     border-radius: 20px;
     margin-bottom: 24px;
     position: relative;
@@ -148,90 +143,29 @@ h3{
       left: 32px;
       width: 62px;
     }
-      .circle-green{
-        padding: 4px;
-        height: 32px;
-        width: 32px;
-        border-radius: 90px;
-        position: relative;
-        background-color: rgba(61, 192, 0, 1);
-        @include respond($mobile){
-          width: 18px;
-          height: 18px;
-          padding: 2.25px;
-          border-radius: 50.625px;
-        }
-        span{
-          position: absolute;
-          top:50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 10px;
-        }
-      }
-      .circle-yellow{
-        padding: 4px;
-        height: 32px;
-        width: 32px;
-        border-radius: 90px;
-        position: relative;
-        background-color: rgba(254, 206, 0, 1);
-        position: relative;
-        @include respond($mobile){
-          width: 18px;
-          height: 18px;
-          padding: 2.25px;
-          border-radius: 50.625px;
-        }
-        span{
-          position: absolute;
-          top:50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: $black-text;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 100%;
-          letter-spacing: -0.6px;
-          font-family: Inter, sans-serif;
-          @include respond($mobile){
-            font-size: 6.75px;
-            line-height: 97%;
-            letter-spacing: -0.337px;
-          }
-        }
-      }
-      .circle-red{
-        padding: 4px;
-        height: 32px;
-        width: 32px;
-        border-radius: 90px;
-        background-color: rgba(229, 7, 7, 1);
-        position: relative;
-        @include respond($mobile){
-          width: 18px;
-          height: 18px;
-          padding: 2.25px;
-          border-radius: 50.625px;
-          
-        }
-        span{
-          font-size: 10px;
-          position: absolute;
-          top:50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-        }
+    .circle{
+      width: 32px;
+      height: 32px;
+      @include respond($mobile){
+        width: 18px;
+        height: 18px;
       }
     }
-
   }
+}
+
 
 // Название, состав, характеристика
 .card-content{
   padding: 0 32px;
   color:$grey-text;
   margin-bottom: 24px;
+  @include respond(1550px){
+    padding: 0 16px;
+  }
+  @include respond($large){
+    font-size: 10px;
+  }
   @include respond($mobile){
     padding: 0;
     margin-bottom: 12px;
@@ -241,6 +175,9 @@ h3{
     font-size: 14px;
     font-weight: 500;
     line-height: 140%;
+    @include respond($large){
+      font-size: 10px;
+    }
     @include respond($mobile){
       font-size: 9px;
       margin-bottom: 8px;
@@ -265,6 +202,9 @@ h3{
       background-color: rgba(246, 246, 248, 1);
       padding: 8px;
       border-radius: 8px;
+      @include respond($large){
+        font-size: 10px;
+      }
       @include respond($mobile){
         padding: 4px;
         border-radius: 4px;
@@ -281,6 +221,9 @@ h3{
   font-family: Inter, sans-serif;
   display: flex;
   padding: 0 32px 32px;
+  @include respond(1550px){
+    padding: 0 16px 16px;
+  }
   @include respond($mobile){
     padding: 0;
     grid-column: 2;
@@ -294,21 +237,27 @@ h3{
     div+div{
       margin-top:4px;
     }
-    .price-normal{
+    .price-old{
       color: $grey-text;
       text-decoration: line-through;
       font-weight: 600;
       font-size: 16px;
       line-height: 100%;
+      @include respond($large){
+        font-size: 12px;
+      }
       @include respond($mobile){
         font-size: 11px;
       }
   }
-    .price-discount{
+    .price-current{
       color: $black-text;
       font-weight: 600;
       font-size: 24px;
       line-height: 100%;
+      @include respond($large){
+        font-size: 18px;
+      }
       @include respond($mobile){
         font-size:11px;
         display: none;
@@ -321,6 +270,9 @@ h3{
     display: flex;
     align-items: center;
     border-radius: 50px;
+    @include respond($large){
+      padding: 8px 10px;
+    }
     @include respond($mobile){
       padding: 8px 12px;
       height: 32px;
@@ -340,6 +292,7 @@ h3{
       font-size: 24px;
       margin-right: 8px;
       @include respond($mobile){
+        font-size: 11px;
         margin-right: 4px;
       }
     }
@@ -356,6 +309,17 @@ h3{
     background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
     border:0;
     position: relative;
+    @include respond($large){
+      margin-left: 4px;
+      width: 42px;
+      height: 42px;
+    }
+    @include respond($mobile){
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      padding: 16px;
+    }
     span{
       position: absolute;
       top:50%;
@@ -372,28 +336,49 @@ h3{
     width: 144px;
     height: 56px;
     padding: 16px 20px;
-    gap: var(--12, 12px);
-    background: var(--03-primary-grey-100, #F6F6F8);
+    gap: 12px;
+    background:#F6F6F8;
     border-radius: 90px;
     margin-left: auto;
+    @include respond($large){
+      width: 110px;
+      height: 42px;
+      font-size: 11px;
+      padding: 8px 10px;
+    }
+    @include respond($mobile){
+      padding: 8px 12px;
+      font-size: 11px;
+      width: 78px;
+      height: 32px;
+      margin: 0 8px;
+      gap: 2px;
+    }
     button{
       border: 0;
       padding: 0;
-      background: var(--03-primary-grey-100, #F6F6F8);
+      background: #F6F6F8;
     }
-
   }
 }
 
 //  раздел наборов
 .package-block{
-  .items-block{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:32px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:32px;
+  @include respond($large){
+    gap:16px;
   }
-  
+  @include respond($desktop){
+    grid-template-columns: repeat(3,1fr);
+  }
+  @include respond($mobile){
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
 }
+
 
 //  подключение икомуна
 [class^="icon-"], [class*=" icon-"] {
