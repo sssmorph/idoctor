@@ -2,9 +2,9 @@
 h2.block-title.d-flex.jb.fsb
     .block-title-left.ac Выгодные предложения
     .block-title-right.d-flex
-        button.circle-button-48
+        button.circle-button
             span.icon-arrowl
-        button.circle-button-48
+        button.circle-button
             span.icon-arrowr
 -
     var items = [
@@ -12,19 +12,20 @@ h2.block-title.d-flex.jb.fsb
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050 г",
-        quantity: "32 шт.",
+        quantity: "32",
         persons: " 3",
-        kkal: " 817 Ккал",
+        kkal: " 817",
         normal_price: "1799₽",
         discount_price: "1149₽",
         status_new: 'iconnew',
         status_discount: 'iconsale',
         status_hot: 'iconpepper',
-        },{title: 'Филадельфия Классическая',
+        },
+        {title: 'Филадельфия Классическая',
         image: "item1",
         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
         weigt: "1050 г",
-        quantity: "32 шт.",
+        quantity: "32",
         persons: " 3",
         kkal: " 817 Ккал",
         normal_price: "1799₽",
@@ -33,6 +34,32 @@ h2.block-title.d-flex.jb.fsb
         status_discount: 'iconsale',
         status_hot: 'iconpepper',
         },
+        {title: 'Филадельфия Классическая',
+                image: "item1",
+                description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+                weigt: "1050 г",
+                quantity: "32",
+                persons: " 3",
+                kkal: " 817 Ккал",
+                normal_price: "1799₽",
+                discount_price: "1149₽",
+                status_new: 'iconnew',
+                status_discount: 'iconsale',
+                status_hot: 'iconpepper',
+                },
+                {title: 'Филадельфия Классическая',
+                        image: "item1",
+                        description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+                        weigt: "1050 г",
+                        quantity: "32",
+                        persons: " 3",
+                        kkal: " 817 Ккал",
+                        normal_price: "1799₽",
+                        discount_price: "1149₽",
+                        status_new: 'iconnew',
+                        status_discount: 'iconsale',
+                        status_hot: 'iconpepper',
+                        },
     ]
         //- первый вид карточки
 .offers-block
@@ -49,7 +76,7 @@ h2.block-title.d-flex.jb.fsb
             p.mb24 #{val.description}
             ul.d-flex.short-information
                 li #{val.weigt}
-                li #{val.quantity}
+                li #{val.quantity} шт.
                 li.icon-user-gray
                     span #{val.persons}
                 li.icon-Symbol
@@ -76,7 +103,7 @@ h2.block-title.d-flex.jb.fsb
             p.mb24 #{val.description}
             ul.d-flex.short-information
                 li #{val.weigt}
-                li #{val.quantity}
+                li #{val.quantity} шт.
                 li.icon-user-gray
                     span #{val.persons}
                 li.icon-Symbol
@@ -94,9 +121,9 @@ h2.block-title.d-flex.jb.fsb
                 span.icon-basket
                 span В корзину
 //- заголовок наборов
-h2.block-title.d-flex.fsb
+h2.block-title.d-flex.ac
     .block-title-left.ac.mr16 Наборы
-    button.circle-button-32
+    button.circle-button.small
         span.icon-longarrow
 
 //- раздел наборы
@@ -114,7 +141,7 @@ h2.block-title.d-flex.fsb
                 p.mb24 #{val.description}
                 ul.d-flex.short-information
                     li #{val.weigt}
-                    li #{val.quantity}
+                    li #{val.quantity} шт.
                     li.icon-user-gray
                         span #{val.persons}
                     li.icon-Symbol
@@ -123,10 +150,10 @@ h2.block-title.d-flex.fsb
                 .price-container.d-flex.jc
                     p.price-current #{val.discount_price}
                     p.price-old #{val.normal_price}
-                .count-in-basket.d-flex.jc.ac
-                    button.icon-minus
-                    span.fsb 1шт
-                    button.icon-plus
+//-                 .count-in-basket.d-flex.jc.ac
+//-                     button.icon-minus
+//-                     span.fsb 1шт
+//-                     button.icon-plus
                 button.base-button.in-basket
                     span.icon-basket
                     span В корзину

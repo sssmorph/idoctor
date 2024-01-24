@@ -68,19 +68,10 @@ h3{
 //  выгодные предложения
 .offers-block{
   display: grid;
+  grid-auto-flow: column;
   grid-template-columns: repeat(4, 1fr);
   gap:32px;
   margin-bottom: 32px;
-  @include respond($large){
-    gap:16px;
-  }
-  @include respond($desktop){
-    grid-template-columns: repeat(3,1fr);
-  }
-  @include respond($mobile){
-    gap: 16px;
-    margin-bottom:16px;
-  }
   overflow:auto;
   &::-webkit-scrollbar {
     height: 6px;
@@ -96,8 +87,48 @@ h3{
       display:none;
     }
   }
+  padding-bottom: 32px;
+  .items-block__item{
+    width: 376px;
+  }
+  @include respond($container){
+    .items-block__item {
+      width: calc((100vw - 176px) / 4);
+    }
+  }
+  @include respond($large){
+    gap:16px;
+    .items-block__item {
+      width: calc((100vw - 128px) / 4);
+    }
+  }
+  @include respond($desktop){
+    grid-template-columns: repeat(3,1fr);
+    .items-block__item {
+      width: calc((100vw - 112px) / 3)
+    }
+  }
+  @include respond($tablet){
+    grid-template-columns: repeat(2,1fr);
+    .items-block__item {
+      width: calc((100vw - 96px) / 2)
+    }
+  }
+  @include respond($tablet-sm){
+    margin-bottom: 0;
+    .items-block__item {
+      width: calc(100vw - 80px);
+    }
+  }
+  @include respond($mobile){
+    .items-block__item {
+      width: calc(100vw - 24px);
+    }
+  }
 }
 .items-block__item{
+  display:flex;
+  flex-direction: column;
   &.hidden{
     display: none;
   }
@@ -120,11 +151,12 @@ h3{
 
   }
   .product-image{
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    max-height: 280px;
     border-radius: 20px;
     margin-bottom: 24px;
     position: relative;
+    object-position: center;
     object-fit: cover;
     @include respond($mobile){
       width: 100px;
@@ -218,6 +250,7 @@ h3{
 
 // Ценники, кнопки корзины, изменения штук
 .card-footer{
+  margin-top:auto;
   font-family: Inter, sans-serif;
   display: flex;
   padding: 0 32px 32px;
@@ -373,7 +406,10 @@ h3{
   @include respond($desktop){
     grid-template-columns: repeat(3,1fr);
   }
-  @include respond($mobile){
+  @include respond($tablet){
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include respond($tablet-sm){
     grid-template-columns: repeat(1, 1fr);
     gap: 12px;
   }
