@@ -2,7 +2,7 @@
     border: 1px solid #21201F;
     font-weight: 600;
     font-size: 15px;
-    transition: .15s background-color ease-in-out;
+    transition: .19s background-color linear;
     @include respond($large){
         font-size: 11px;
       }
@@ -14,9 +14,20 @@
 .circle-button{
     width: 48px;
     height: 48px;
+    @include respond($desktop){
+        width: 42px;
+        height: 42px;
+    }
     &.small{
         width: 32px;
         height: 32px;
+        @include respond($desktop){
+            width: 28px;
+            height: 28px;
+        }
+    }
+    &:disabled{ 
+        opacity: 0.4;
     }
     background-color: #fff;
     border-radius: 50%;
@@ -36,4 +47,33 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+}
+.show-more-button{
+    background: #EAEDF4;
+    border-radius: 90px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 105%;
+    color: #909AB2;
+
+    @include respond($mobile){
+        padding: 12px;
+        border-radius: 8px;
+
+        font-size: 10px;
+    }
+    transition: 0.3s background-color ease-out;
+    &:hover{
+        background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+        color: rgba(33, 32, 31, 1);
+
+    }
+
 }

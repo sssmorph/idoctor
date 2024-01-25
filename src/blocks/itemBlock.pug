@@ -1,46 +1,46 @@
 
 h2.block-title.d-flex.jb.fsb
     .block-title-left.ac Выгодные предложения
-    .block-title-right.d-flex
-        button.circle-button
+    .block-title-right.d-flex.ac
+        button.circle-button.d-flex.ac.jc
             span.icon-arrowl
-        button.circle-button
+        button.circle-button.d-flex.ac.jc
             span.icon-arrowr
 -
     var items = [
         {title: 'Филадельфия Классическая',
-        image: "item1",
-        description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
-        weigt: "1050 г",
-        quantity: "32",
-        persons: " 3",
-        kkal: " 817",
-        normal_price: "1799₽",
-        discount_price: "1149₽",
-        status_new: 'iconnew',
-        status_discount: 'iconsale',
-        status_hot: 'iconpepper',
-        },
+            image: "item1",
+            description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+            weigt: "1050",
+            quantity: "32",
+            persons: "3",
+            kkal: "817",
+            normal_price: "1799₽",
+            discount_price: "1149₽",
+            status_new: 'iconnew',
+            status_discount: 'iconsale',
+            status_hot: 'iconpepper',
+            },
         {title: 'Филадельфия Классическая',
-        image: "item1",
-        description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
-        weigt: "1050 г",
-        quantity: "32",
-        persons: " 3",
-        kkal: " 817 Ккал",
-        normal_price: "1799₽",
-        discount_price: "1149₽",
-        status_new: 'iconnew',
-        status_discount: 'iconsale',
-        status_hot: 'iconpepper',
-        },
+            image: "item1",
+            description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+            weigt: "1050",
+            quantity: "32",
+            persons: "3",
+            kkal: "817",
+            normal_price: "1799₽",
+            discount_price: "1149₽",
+            status_new: 'iconnew',
+            status_discount: 'iconsale',
+            status_hot: 'iconpepper',
+            },
         {title: 'Филадельфия Классическая',
                 image: "item1",
                 description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
-                weigt: "1050 г",
+                weigt: "1050",
                 quantity: "32",
-                persons: " 3",
-                kkal: " 817 Ккал",
+                persons: "3",
+                kkal: "817",
                 normal_price: "1799₽",
                 discount_price: "1149₽",
                 status_new: 'iconnew',
@@ -50,10 +50,10 @@ h2.block-title.d-flex.jb.fsb
                 {title: 'Филадельфия Классическая',
                         image: "item1",
                         description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
-                        weigt: "1050 г",
+                        weigt: "1050",
                         quantity: "32",
-                        persons: " 3",
-                        kkal: " 817 Ккал",
+                        persons: "3",
+                        kkal: "817",
                         normal_price: "1799₽",
                         discount_price: "1149₽",
                         status_new: 'iconnew',
@@ -74,13 +74,13 @@ h2.block-title.d-flex.jb.fsb
         .card-content
             h3 #{val.title}
             p.mb24 #{val.description}
-            ul.d-flex.short-information
-                li #{val.weigt}
+            ul.short-information
+                li #{val.weigt} г
                 li #{val.quantity} шт.
                 li.icon-user-gray
-                    span #{val.persons}
+                    span &ensp;#{val.persons}
                 li.icon-Symbol
-                    span #{val.kkal}
+                    span &ensp;#{val.kkal} Ккал
         .card-footer.d-flex.ac
             .price-container
                 div.price-current #{val.discount_price}
@@ -101,22 +101,30 @@ h2.block-title.d-flex.jb.fsb
         .card-content
             h3 #{val.title}
             p.mb24 #{val.description}
-            ul.d-flex.short-information
-                li #{val.weigt}
+            ul.short-information
+                li #{val.weigt} г
                 li #{val.quantity} шт.
                 li.icon-user-gray
-                    span #{val.persons}
+                    span &ensp;#{val.persons}
                 li.icon-Symbol
-                    span #{val.kkal}
+                    span &ensp;#{val.kkal} Ккал
         .card-footer
             .price-container.d-flex.jc
                 p.price-current #{val.discount_price}
                 p.price-old #{val.normal_price}
 
             .count-in-basket.d-flex.ac
-                button.icon-minus
+                button.minus 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="minus">
+                    <path id="Line 2" d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    </g></svg>
                 span.fsb 1шт
-                button.icon-plus
+                button.plus
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 6L12 18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
             button.in-basket.base-button
                 span.icon-basket
                 span В корзину
@@ -139,21 +147,33 @@ h2.block-title.d-flex.ac
             .card-content
                 h3 #{val.title}
                 p.mb24 #{val.description}
-                ul.d-flex.short-information
-                    li #{val.weigt}
+                ul.short-information
+                    li #{val.weigt} г
                     li #{val.quantity} шт.
                     li.icon-user-gray
-                        span #{val.persons}
+                        span &ensp;#{val.persons}
                     li.icon-Symbol
-                        span #{val.kkal}
+                        span &ensp;#{val.kkal} Ккал
             .card-footer
                 .price-container.d-flex.jc
                     p.price-current #{val.discount_price}
                     p.price-old #{val.normal_price}
-//-                 .count-in-basket.d-flex.jc.ac
-//-                     button.icon-minus
-//-                     span.fsb 1шт
-//-                     button.icon-plus
+                .count-in-basket.d-flex.jc.ac
+                    button.minus 
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="minus">
+                        <path id="Line 2" d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        </svg>
+                    span.fsb 1шт
+                    button.plus
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 6L12 18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+
                 button.base-button.in-basket
                     span.icon-basket
                     span В корзину
+    
+button.show-more-button Показать ещё
