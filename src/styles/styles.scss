@@ -472,34 +472,130 @@ h3{
 
 .about-block{
   margin-bottom: 112px;
-  .delivery-payments{
-    .about-title{
-      display: flex;
-      align-items: center;
-      gap:16px;
-      & span{
-        font-family: Inter;
-        font-size: 20px;
+  gap: 32px;
+  .information-container{
+    background-color: greenyellow;
+    padding: 32px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 20px;
+    margin-bottom: 48px;
+    .information-content{
+      padding: 48px;
+      width: 752px;
+      border-radius: 20px;
+      background-color: #fff;
+      margin-left: auto;
+      .information-header{
+        display: flex;
+        align-items: flex-start;
+        font-size: 24px;
         font-weight: 600;
-        letter-spacing: -0.4px;
+        line-height: 130%;
+        img{
+          width: 96px;
+          height: 96px;
+          margin-left: 20px;
+        }        
+        h2{
+          margin-bottom: 23px;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 130%;
+        }
+        }
+      p{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 140%;
+      }
+      button{
+        padding: 20px;
+        gap:12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 90px;
+        margin-top:32px;
       }
     }
-    .rectangle{
-      height: 1px;
-      background-color: rgba(234, 234, 237, 1);
-      margin: 16px 0;
+  }
+  .additional-information{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    .delivery-payments{
+      padding: 32px;
+      border-radius: 20px;
+      background-color: #fff;      
+      .about-title{
+        display: flex;
+        align-items: center;
+        gap:16px;
+        & h3{
+          font-family: Inter;
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: -0.4px;
+          margin-bottom: 0;
+        }
+        button{
+          margin-left: auto;
+          background-color: rgba(246, 246, 248, 1);
+        }
+      }
+      .rectangle{
+        height: 1px;
+        background-color: rgba(234, 234, 237, 1);
+        margin: 16px 0;
+      }
+      .about-list{
+
+        .about-card-image-container{
+          display: grid;
+          gap:16px;
+          grid-template-columns: 50px 1fr;
+          .about-card-image{
+            padding: 8px;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(246, 246, 248, 1);
+          }
+          .about-card-content{
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .about-card-title{
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 105%;
+              margin: 0;
+            }
+            .about-card-text{
+              font-size: 15px;
+              font-weight: 500;
+              line-height: 135%;
+              color: rgba(148, 152, 166, 1);
+            }
+          }
+        }        
+      }
+
+
     }
-    padding: 32px;
-    border-radius: 20px;
-    background-color: #fff;
+    .map-container{
+      padding: 16px;
+
+      border-radius: 20px;
+      background-color: #fff;
+      *{
+        border-radius: 20px;
+      }
+    }    
   }
-  .map-container{
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #fff;
-  }
+
 }
 .seo-content{
   font-family: Inter;
@@ -507,6 +603,7 @@ h3{
   font-weight: 500;
   line-height: 145%;
   color: rgba(125, 128, 139, 1);
+  margin-bottom: 112px;
 }
 
 //  подключение икомуна
