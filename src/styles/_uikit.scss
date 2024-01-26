@@ -56,6 +56,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 112px;
 
     font-family: Inter;
     font-size: 15px;
@@ -66,7 +67,8 @@
     @include respond($mobile){
         padding: 12px;
         border-radius: 8px;
-
+        margin-bottom: 24px;
+        
         font-size: 10px;
     }
     transition: 0.3s background-color ease-out;

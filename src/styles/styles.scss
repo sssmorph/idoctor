@@ -38,6 +38,9 @@ h2{
     letter-spacing: -0.72px;
     margin-bottom: 16px;
   }
+  &.seo-title{
+    margin-bottom: 24px;
+  }
 }
 //  Название товара
 h3{
@@ -467,6 +470,44 @@ h3{
   }
 }
 
+.about-block{
+  margin-bottom: 112px;
+  .delivery-payments{
+    .about-title{
+      display: flex;
+      align-items: center;
+      gap:16px;
+      & span{
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.4px;
+      }
+    }
+    .rectangle{
+      height: 1px;
+      background-color: rgba(234, 234, 237, 1);
+      margin: 16px 0;
+    }
+    padding: 32px;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+  .map-container{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+}
+.seo-content{
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 145%;
+  color: rgba(125, 128, 139, 1);
+}
 
 //  подключение икомуна
 [class^="icon-"], [class*=" icon-"] {
