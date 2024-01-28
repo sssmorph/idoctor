@@ -17,9 +17,10 @@ button{
 .main-container {
   max-width: $container;
   margin: auto;
-  padding: 0 40px;
+  padding: 20px 40px;
+
   @include respond($mobile){
-    padding: 0 12px;
+    padding: 12px;
   }
 }
 // название раздела
@@ -210,7 +211,7 @@ h3{
   padding: 0 32px;
   color:$grey-text;
   margin-bottom: 24px;
-  @include respond(1550px){
+  @include respond(1575px){
     padding: 0 16px;
   }
   @include respond($large){
@@ -247,6 +248,7 @@ h3{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
+
     @include respond($large){
       gap: 6px;
     }
@@ -291,7 +293,7 @@ h3{
   font-family: Inter, sans-serif;
   display: flex;
   padding: 0 32px 32px;
-  @include respond(1550px){
+  @include respond(1575px){
     padding: 0 16px 16px;
   }
   @include respond($mobile){
@@ -480,28 +482,53 @@ h3{
     justify-content: flex-end;
     border-radius: 20px;
     margin-bottom: 48px;
+    @include respond($mobile){
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom:16px;
+    }
     .information-content{
       padding: 48px;
       width: 752px;
       border-radius: 20px;
       background-color: #fff;
       margin-left: auto;
+      @include respond($mobile){
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        background-color: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(6px);
+      }
       .information-header{
         display: flex;
         align-items: flex-start;
         font-size: 24px;
         font-weight: 600;
         line-height: 130%;
+        @include respond($mobile){
+          flex-direction: column-reverse;
+        }
         img{
           width: 96px;
           height: 96px;
           margin-left: 20px;
+          @include respond($mobile){
+            margin: 0 0 12px 0;
+            width: 46px;
+            height: 46px;
+          }
         }        
         h2{
           margin-bottom: 23px;
           font-size: 24px;
           font-weight: 600;
           line-height: 130%;
+          @include respond($mobile){
+            margin-bottom: 12px;
+            font-size: 15px;
+            
+          }
         }
         }
       p{
@@ -509,6 +536,9 @@ h3{
         font-size: 15px;
         font-weight: 500;
         line-height: 140%;
+        @include respond($mobile){
+          font-size: 10px;
+        }
       }
       button{
         padding: 20px;
@@ -518,6 +548,14 @@ h3{
         align-items: center;
         border-radius: 90px;
         margin-top:32px;
+        @include respond($mobile){
+          padding: 12px;
+          margin-top:16px;
+          background-color: #fff;
+          border: 0;
+          font-size: 11px;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -528,11 +566,15 @@ h3{
     .delivery-payments{
       padding: 32px;
       border-radius: 20px;
-      background-color: #fff;      
+      background-color: #fff;    
       .about-title{
         display: flex;
         align-items: center;
-        gap:16px;
+        gap:32px;
+        flex-direction: row;
+        h3:first-child{
+          width: 344px;
+        }
         & h3{
           font-family: Inter;
           font-size: 20px;
@@ -551,11 +593,17 @@ h3{
         margin: 16px 0;
       }
       .about-list{
-
-        .about-card-image-container{
+        padding-top: 16px;
+         display: flex;
+         flex-direction: column;
+         gap: 32px;
+         flex-wrap: wrap;
+         column-count: 2;
+         height: 248px;
+        .about-card-container{
           display: grid;
           gap:16px;
-          grid-template-columns: 50px 1fr;
+          grid-template-columns: 50px 278px;
           .about-card-image{
             padding: 8px;
             border-radius: 8px;
@@ -579,6 +627,13 @@ h3{
               line-height: 135%;
               color: rgba(148, 152, 166, 1);
             }
+            .about-card-link{
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 14px;
+              color: rgba(125, 128, 139, 1);
+
+            }
           }
         }        
       }
@@ -587,7 +642,6 @@ h3{
     }
     .map-container{
       padding: 16px;
-
       border-radius: 20px;
       background-color: #fff;
       *{
