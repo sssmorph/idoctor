@@ -482,7 +482,7 @@ h3{
     justify-content: flex-end;
     border-radius: 20px;
     margin-bottom: 48px;
-    @include respond($mobile){
+    @include respond($tablet-sm){
       padding: 12px;
       border-radius: 10px;
       margin-bottom:16px;
@@ -493,7 +493,7 @@ h3{
       border-radius: 20px;
       background-color: #fff;
       margin-left: auto;
-      @include respond($mobile){
+      @include respond($tablet-sm){
         padding: 20px;
         border-radius: 10px;
         border: 1px solid #fff;
@@ -506,14 +506,14 @@ h3{
         font-size: 24px;
         font-weight: 600;
         line-height: 130%;
-        @include respond($mobile){
+        @include respond($tablet-sm){
           flex-direction: column-reverse;
         }
         img{
           width: 96px;
           height: 96px;
           margin-left: 20px;
-          @include respond($mobile){
+          @include respond($tablet-sm){
             margin: 0 0 12px 0;
             width: 46px;
             height: 46px;
@@ -524,7 +524,7 @@ h3{
           font-size: 24px;
           font-weight: 600;
           line-height: 130%;
-          @include respond($mobile){
+          @include respond($tablet-sm){
             margin-bottom: 12px;
             font-size: 15px;
             
@@ -536,7 +536,7 @@ h3{
         font-size: 15px;
         font-weight: 500;
         line-height: 140%;
-        @include respond($mobile){
+        @include respond($tablet-sm){
           font-size: 10px;
         }
       }
@@ -548,7 +548,7 @@ h3{
         align-items: center;
         border-radius: 90px;
         margin-top:32px;
-        @include respond($mobile){
+        @include respond($tablet-sm){
           padding: 12px;
           margin-top:16px;
           background-color: #fff;
@@ -561,19 +561,39 @@ h3{
   }
   .additional-information{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 784px 1fr;
     gap: 32px;
+    @include respond($large){
+      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond($laptop){
+      grid-template-columns: repeat(1, 1fr);      
+    }
+    @include respond($mobile){
+
+      gap: 12px;
+    }
     .delivery-payments{
       padding: 32px;
       border-radius: 20px;
-      background-color: #fff;    
+      background-color: #fff;
+  
       .about-title{
         display: flex;
         align-items: center;
         gap:32px;
         flex-direction: row;
-        h3:first-child{
+        .delivery-time-openning{
           width: 344px;
+          @include respond($large){
+            width: auto;
+          }
+        }
+        .payments-method{
+          @include respond($large){
+            display: none;
+          }          
         }
         & h3{
           font-family: Inter;
@@ -594,12 +614,17 @@ h3{
       }
       .about-list{
         padding-top: 16px;
-         display: flex;
-         flex-direction: column;
-         gap: 32px;
-         flex-wrap: wrap;
-         column-count: 2;
-         height: 248px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        flex-wrap: wrap;
+        column-count: 2;
+        height: 248px;
+        @include respond($large){
+          flex-wrap: nowrap;
+          height: auto;
+          gap: 16px;
+        }
         .about-card-container{
           display: grid;
           gap:16px;
@@ -644,7 +669,18 @@ h3{
       padding: 16px;
       border-radius: 20px;
       background-color: #fff;
+      @include respond($laptop){
+        height: 376px;
+      }
+      @include respond($mobile){
+        height: 376px;
+        padding: 8px;
+        border-radius: 10px;
+      }
       *{
+        @include respond($mobile){
+          border-radius: 10px;
+        }
         border-radius: 20px;
       }
     }    
@@ -658,6 +694,21 @@ h3{
   line-height: 145%;
   color: rgba(125, 128, 139, 1);
   margin-bottom: 112px;
+  @include respond($mobile){
+    font-size: 9px;
+    line-height: 140%;
+  }
+  .hiden-seo-text{
+    @include respond($mobile){
+      display: none;
+    }
+  }
+  .show-more-text{
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-top:8px;
+  }
 }
 
 //  подключение икомуна
