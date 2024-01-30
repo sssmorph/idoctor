@@ -1,0 +1,65 @@
+
+
+- var adress = 'Томск, пр.Ленина, 41';
+- var openTime = 'с 09:30 до 23:00';
+- var deliveryTime = '~60-120 часов';
+//- о нас
+.about-block 
+    .additional-information            
+        .delivery-payments
+            .about-title
+                h3.delivery-time-openning Доставка и часы работы
+                h3.payments-method Способы оплаты
+                button.circle-button.small 
+                    span.icon-longarrow
+            .rectangle
+            ul.about-list
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/balls.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Самовывоз по адресу
+                        span.about-card-text #{adress}
+                        a(href="https://yandex.ru/maps/-/CDu-7QN1" target="_blank").about-card-link Смотреть на карте
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/delivery.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title #{openTime}
+                        span.about-card-text Принимаем и доставляем заказы
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/watch.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title #{deliveryTime}
+                        span.about-card-text Среднее время доставки
+                li.about-card-container 
+                    .about-card-image-container
+                        img(src=require('../images/wallet.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Наличными
+                        span.about-card-text Оплата наличными курьеру или в ресторане при получении заказа.
+                li.about-card-container 
+                    .about-card-image-container
+                        img(src=require('../images/credit-card.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Банковской картой
+                        span.about-card-text Оплата заказа банковской картой при получении курьеру или в ресторане. 
+                        span.about-card-text Принимаются банковские карты MasterCard, Visa, МИР.
+                
+
+        .map-container
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A57bd8dfc09791c94938568fcb894a4e2e0e8d283165c40310249ff05619b1ad2lang=ru_RU&amp;scroll=true"></script>
+
+h2.seo-title Заказать суши с доставкой на дом
+.seo-content 
+    p Наша миссия — сделать вашу жизнь вкуснее и удобнее, предлагая широкий выбор разнообразных блюд, таких как суши, пицца и другие вкусности. Мы стремимся обеспечить высочайший уровень обслуживания и гарантировать, что каждая доставка будет приятным и бесперебойным опытом для вас и ваших близких. Наша служба доставки работает в полном соответствии со стандартами качества и безопасности пищевой продукции. Мы гордимся тем, что используем только свежие и качественные ингредиенты для приготовления наших блюд.
+    .hiden-seo-text
+        br
+        p Мы гордимся тем, что используем только свежие и качественные ингредиенты для приготовления наших блюд. Наша команда профессиональных поваров и шеф-поваров с большим опытом готовят каждое блюдо с большой любовью и креативностью. Мы также осознаем важность своей роли в поддержании экологического баланса, поэтому мы стараемся использовать упаковку, которая минимально влияет на окружающую среду. Кроме того, мы внимательно следим за вашими пожеланиями и предоставляем возможность индивидуального заказа, чтобы вы могли насладиться вашими любимыми блюдами в любое время, удобное для вас. 
+        br
+        p Необходимость вкусной и удобной доставки еды часто возникает в современной жизни. Мы стремимся быть вашим надежным партнером в этом вопросе, обеспечивая вас лучшими кулинарными изысками и отличным обслуживанием. Мы нацелены на то, чтобы сделать службу доставки пиццы и суши в Томске вашим первым выбором. Мы постоянно совершенствуем свои услуги и внимательно слушаем обратную связь наших клиентов.
+        br
+        p Ваше удовлетворение и улыбка на лице — наша цель! Спасибо, что выбрали нашу компанию, и мы с удовольствием организуем для вас незабываемый кулинарный опыт!
+    button.show-more-text 
+        span Раскрыть текст

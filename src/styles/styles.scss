@@ -34,6 +34,9 @@ h2{
   @include respond($desktop){
     font-size: 28px;
   }
+  @include respond($laptop){
+    margin-bottom: 32px;
+  }
   @include respond($mobile){
     font-size: 18px;
     letter-spacing: -0.72px;
@@ -248,7 +251,7 @@ h3{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-
+    align-items: center;
     @include respond($large){
       gap: 6px;
     }
@@ -269,6 +272,7 @@ h3{
       background-color: rgba(246, 246, 248, 1);
       padding: 8px;
       border-radius: 8px;
+      display: flex;
       align-items: center;
       @include respond($large){
         font-size: 10px;
@@ -282,6 +286,7 @@ h3{
       }
       span{
         font-family: Inter, sans-serif;
+
       }
     }
   }
@@ -472,11 +477,14 @@ h3{
   }
 }
 
+
+//  блок с информацией 
 .about-block{
   margin-bottom: 112px;
   gap: 32px;
   .information-container{
-    background-color: greenyellow;
+    background-image: url(../images/information-about.png);
+    background-size: cover;
     padding: 32px;
     display: flex;
     justify-content: flex-end;
@@ -690,6 +698,7 @@ h3{
   }
 
 }
+//  Блок с текстом описания компании
 .seo-content{
   font-family: Inter;
   font-size: 14px;
@@ -719,6 +728,301 @@ h3{
   }
 }
 
+// breadcrumbs
+.breadcrumbs{
+  margin-bottom: 32px;
+}
+
+.logotype-container{
+  background-image: url("../images/about-company-background.png");
+  margin-bottom: 112px;
+  height: 520px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include respond($desktop){
+    height: 390px;
+  }
+  @include respond($laptop){
+    margin-bottom: 48px;
+  }
+  .logotype-with-image{
+    display: flex;
+    flex-direction: column;
+    gap:22px;
+    .under-logo-text{
+      width: 138px;
+      text-align: center;
+      font-family: Inter;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 135%;
+      color: #fff;
+      word-wrap: break-word;
+      margin: 0 auto 0 40px;
+    }
+  }
+}
+// описание с 3 карточками
+.information-with-3-blocks{
+  margin: 0 auto 112px auto;
+  @include respond($laptop){
+    margin-bottom: 48px;
+  }
+  .information-center-title{
+    width: 1058px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: -0.64px;
+    text-align: center;
+    @include respond($desktop){
+      font-size: 28px;
+      width: 790px;
+      word-wrap: break-word;
+    }
+    @include respond($laptop){
+      font-size: 20px;
+    }
+  }
+  .information-card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 410px);
+    gap: 48px;
+    justify-content: center;
+    @include respond($large){
+      grid-template-columns: repeat(3, 350px);
+      gap:32px;
+    }
+    @include respond($desktop){
+      grid-template-columns: repeat(3, 280px);
+    }
+    .information-card-item{
+      .information-card-image{
+        margin-bottom: 24px;
+        border-radius: 10px;
+        @include respond($large){
+          width: 350px;
+          object-fit: cover;
+        }
+        @include respond($desktop){
+          width: 280px;
+        }
+      }
+      .information-card-text{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 140%;
+        @include respond($laptop){
+          font-size: 13px;
+        }
+      }
+    }
+  }  
+}
+// наши преимущества
+.advantages{
+  margin-bottom: 112px;
+  @include respond($laptop){
+    margin-bottom: 48px;
+  }
+  .advantages-title{
+
+    text-align: center;
+  }
+  .advantages-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:32px;
+    @include respond($large){
+      gap:16px;
+    }
+  }
+
+  .advantages-card{
+    padding: 32px;
+    border-radius: 20px;
+    background-color: #fff;
+    @include respond($laptop){
+      padding: 24px;
+    }
+    .advantages-card-title-container{
+      display: flex;
+      .yellow-square{
+        width: 27px;
+        height: 27px;
+        background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+        padding: 8px;
+        border-radius: 8px;
+        margin-right: 12px;
+        .black-point{
+          width: 11px;
+          height: 11px;
+          background-color: rgba(33, 32, 31, 1);
+          border-radius: 50%;
+        }
+      }
+      .advantages-card-title{
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.4px;
+        margin-bottom: 16px;
+        @include respond($laptop){
+          font-size:  16px;
+        }
+        @include respond($mobile){
+          font-size: 12px;
+          line-height: 105%;
+        }
+      }
+    }
+    .advantages-card-text{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 135%;
+      color: rgba(125, 128, 139, 1);
+      @include respond($laptop){
+        font-size: 12px;
+      }
+      @include respond($mobile){
+        font-size: 11px;
+        line-height: 125%;
+      }
+    }    
+  }
+}
+// раздел с контактами и картой
+
+.contacts-block-with-map{
+  margin-bottom: 112px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap:32px;
+  @include respond($laptop){
+    gap:16px;
+    margin-bottom: 48px;
+  }
+  .contacts-block-container{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    @include respond($laptop){
+      gap:16px;
+    }
+    .contacts-block-info{
+      padding: 32px;
+      border-radius: 20px;
+      background-color: #fff;
+      @include respond($laptop){
+        padding: 24px;
+      }
+      & b{
+        font-size: 15px;
+        font-weight: 700;
+
+      }
+      & span{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 135%;
+        letter-spacing: -0.32px;
+
+      }
+      .contacts-block-info-rectangle{
+        height: 2px;
+        background-color: #EEEFF5;
+        margin: 16px 0;
+      }
+    }
+    .contacts-block-social-media{
+      padding: 32px;
+      border-radius: 20px;
+      background-color: #fff;
+      @include respond($laptop){
+        padding: 24px;
+      }
+      .contacts-social-media-title{
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.44px;
+        margin-bottom: 16px;
+      }
+      .social-media-container{
+        display: flex;
+        gap:8px;
+        flex-direction: row;
+        align-items: center;
+        .social-media-button{
+            padding: 10px;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            background-color: #F6F7FA;
+          & span{
+            text-align: center;
+            font-size: 22px;
+          }        
+        }
+      }
+    }
+  }
+  .contacts-block-map{
+    padding: 32px;
+    border-radius: 20px;
+    background-color: #fff;
+    @include respond($laptop){
+      padding: 24px;
+    }
+    *{
+      border-radius: 20px;
+    }
+  }   
+}
+    
+//  breadcrumbs
+.breadcrumbs-container{
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  .home-link{
+    margin-right: 8px;
+    img{
+      width: 16px;
+      height: 16px;
+      @include respond($laptop){
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+  .breadcrumbs-link{
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(148, 152, 166, 1);  
+    @include respond($laptop){
+      font-size: 13px;
+    }  
+  }
+  .separator{
+    margin: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #CCCDD1;
+    @include respond($laptop){
+      font-size: 12px;
+    }
+  }
+  .separator:last-child{
+    display: none;
+  }
+}
+
 //  подключение икомуна
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -733,6 +1037,7 @@ h3{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .icon-icon-load:before {
   content: "\e913";
