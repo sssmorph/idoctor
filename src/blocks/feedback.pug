@@ -1,3 +1,43 @@
+//- хлебные крошки
+-
+    var itemsBreadcrumbs = [
+        {text: "Главная",
+        link: "123",
+        },
+        {text: "Контакты",
+        link: "123",
+        },
+        {text: "О нас",
+        link: "123"
+        },
+    ]
+
+.breadcrumbs-container 
+    a(href="").home-link
+        img(src=require("../images/home-icon.png"))
+    each val, index in itemsBreadcrumbs 
+        a(href=""+val.link).breadcrumbs-link #{val.text}
+        span.separator /
+
+//- блок отзывов
+.feedback-block 
+    .reviews-container 
+        h2.feedback-title Отзывы
+        ul.reviews-list-container 
+            li.review-item 
+                .review-item-header
+                    img(src="").review-item-header-avatar
+                    .about-review 
+                        .score-date
+                            .review-score 
+                            span.review-date
+                .review-item-content
+                    p.review-text 
+                .review-item-images
+    
+
+    
+
 
 
 - var adress = 'Томск, пр.Ленина, 41';
