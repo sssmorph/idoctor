@@ -20,21 +20,39 @@
         span.separator /
 
 //- блок отзывов
+
+
+h2.feedback-title Отзывы
 .feedback-block 
     .reviews-container 
-        h2.feedback-title Отзывы
+
         ul.reviews-list-container 
             li.review-item 
                 .review-item-header
-                    img(src="").review-item-header-avatar
-                    .about-review 
+                    .review-item-header-avatar
+                        span.icon-user-gray
+                    .about-review
+                        span.review-user-name Фамилия Имя 
                         .score-date
                             .review-score 
-                            span.review-date
+                                img(src=require("../images/star-feedback.png"))
+                            span.review-date 24 Января 2024
                 .review-item-content
-                    p.review-text 
+                    p.review-text У вас очень вкусные суши 5 лет только у вас их заказываю самые нежные, вкусные, хрустящие и свежие роллы. Спасибо, я довольна!
                 .review-item-images
-    
+                    img(src=require("../images/forfeedback.png")).review-image
+                    img(src=require("../images/forfeedback.png")).review-image
+                    img(src=require("../images/forfeedback.png")).review-image
+                    button.more-images 
+                        span.plusN +1
+
+        button.show-more-button Смотреть еще
+    .make-review-container 
+        .make-review-header 
+            img(src=require("../images/sale.png")).sale-image
+            span.make-review-title Оставить отзыв
+            span.make-review-text Оставьте отзыв и получите скидочный промокод на следующий заказ!
+
 
     
 

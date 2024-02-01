@@ -739,7 +739,7 @@ h3{
     line-height: 140%;
   }
   .hiden-seo-text{
-    @include respond($mobile){
+    @include respond($tablet-sm){
       display: none;
     }
   }
@@ -750,7 +750,7 @@ h3{
     text-decoration: underline;
     margin-top:8px;
     display: none;
-    @include respond($mobile){
+    @include respond($tablet-sm){
       display: inline;
     }
   }
@@ -1188,10 +1188,225 @@ h3{
     
 
 // feedback block
-
+.feedback-title{
+      margin-bottom: 32px;
+    }
 .feedback-block{
-  .feedback-title{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-bottom: 112px;
+  @include respond($laptop){
+    display: flex;
+    flex-direction: column-reverse;
+    gap:24px;
+    margin-bottom: 48px;
+  }
+  @include respond($tablet){
     margin-bottom: 32px;
+  }
+  @include respond($tablet-sm){
+    margin-bottom: 24px;
+  }
+  .reviews-container{
+    .reviews-list-container{
+      display: flex;
+      flex-direction: column;
+      gap:12px;
+      margin-bottom: 12px;
+      .review-item{
+        padding: 32px;
+        border-radius: 14px;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+        display: flex;
+        flex-direction: column;
+        gap:16px;
+        @include respond($tablet){
+          padding: 16px;
+        }
+        @include respond($tablet-sm){
+          gap:8px;
+        }
+        .review-item-header{
+          display: flex;
+          flex-direction: row;
+          gap:20px;
+          @include respond($tablet-sm){
+            gap: 8px;
+          }
+          .review-item-header-avatar{
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            background-color: rgba(234, 237, 244, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .span{
+              font-size: 18px;
+              line-height: 18px;
+            }
+          }
+          .about-review{
+            display: flex;
+            flex-direction: column;
+            gap:12px;
+            @include respond($tablet-sm){
+              gap:4px;
+            }
+            .review-user-name{
+              font-size: 16px;
+              font-weight: 600;
+              @include respond($tablet-sm){
+                font-size: 14px;
+                letter-spacing: -2%;
+
+              }
+            }
+            .score-date{
+              display: flex;
+              flex-direction: row;
+              gap:12px;
+              align-items: center;
+              @include respond($tablet-sm){
+                flex-direction: column-reverse;
+                gap:4px;
+              }
+              .review-date{
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 140%;
+                color: rgba(125, 128, 139, 1);
+                @include respond($tablet-sm){
+                  font-size: 12px;
+
+                }
+              }
+              .review-score{
+                height: 16px;
+                width: 18px;
+                display: flex;
+                flex-direction: row;
+                @include respond($tablet-sm){
+                  height: 10px;
+                  width: 11px;
+                }
+                & img{
+                  height: 16px;
+                  width: 16px;
+                  @include respond($tablet-sm){
+                    height: 10px;
+                    width: 11px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .review-item-content{
+          .review-text{
+            font-size: 15px;
+            line-height: 140%;
+            font-weight: 500;
+            color: rgba(125, 128, 139, 1);
+            @include respond($tablet-sm){
+              font-size: 12px;
+            }
+          }
+        }
+        .review-item-images{
+          display: flex;
+          flex-direction: row;
+          gap:8px;
+          .review-image{
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            @include respond($tablet-sm){
+              width: 60px;
+              height: 60px;
+              border-radius: 10px;
+            }
+          }
+          .more-images{
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            background-color: rgba(234, 237, 244, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include respond($tablet-sm){
+              width: 60px;
+              height: 60px;
+              border-radius: 10px;
+            }
+            .plusN{
+
+              font-size: 15px;
+              font-weight: 700;
+              line-height: 140%;
+              color: rgba(144, 154, 178, 1);
+            }
+          }
+        }
+      }
+    }    
+
+  }
+  .make-review-container {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+    border-radius: 20px;
+    height: 420px;
+    @include respond($tablet){
+      background: none;
+    }
+    .make-review-header{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .make-review-title{
+        font-weight: 600;
+        font-size: 36px;
+        letter-spacing: -4%;
+        margin: 0 auto;
+      }
+      .make-review-text{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        margin: 0 auto;
+        width: 280px;
+      }
+      .sale-image{
+        width: 32px;
+        height: 32px;
+        margin: 0 auto;
+      }
+    }
+    .review-service{
+      display: flex;
+      flex-direction: row;
+      gap:8px;
+      .review-service-item{
+        background-color: rgba(246, 247, 250, 1);
+        padding: 16px;
+        border-radius: 14px;
+        @include respond($tablet){
+          background-color: rgba(255, 255, 255, 1);
+          padding: 12px 8px;
+          border-radius: 10px;
+
+        }
+      }
+    }
   }
   
 }
