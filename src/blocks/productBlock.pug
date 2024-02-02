@@ -1,0 +1,209 @@
+//- хлебные крошки
+-
+    var itemsBreadcrumbs = [
+        {text: "Главная",
+        link: "123",
+        },
+        {text: "Контакты",
+        link: "123",
+        },
+        {text: "О нас",
+        link: "123"
+        },
+    ]
+
+.breadcrumbs-container 
+    a(href="").home-link
+        img(src=require("../images/home-icon.png"))
+    each val, index in itemsBreadcrumbs 
+        if index != 0
+            span.separator /    
+        a(href=""+val.link).breadcrumbs-link #{val.text}
+
+//- карточка товара
+
+
+
+//- выгодные предложения
+
+h2.block-title.d-flex.jb.fsb
+    .block-title-left.ac Рекомендуем попробовать
+    .block-title-right.d-flex.ac
+        button.circle-button.d-flex.ac.jc
+            span.icon-arrowl
+        button.circle-button.d-flex.ac.jc
+            span.icon-arrowr
+-
+    var items = [
+        {title: 'Филадельфия Классическая',
+            image: "item1",
+            description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+            weigt: "1050",
+            quantity: "32",
+            persons: "3",
+            kkal: "817",
+            normal_price: "1799₽",
+            discount_price: "1149₽",
+            status_new: 'iconnew',
+            status_discount: 'iconsale',
+            status_hot: 'iconpepper',
+            },
+        {title: 'Филадельфия Классическая',
+            image: "item1",
+            description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+            weigt: "1050",
+            quantity: "32",
+            persons: "3",
+            kkal: "817",
+            normal_price: "1799₽",
+            discount_price: "1149₽",
+            status_new: 'iconnew',
+            status_discount: 'iconsale',
+            status_hot: 'iconpepper',
+            },
+        {title: 'Филадельфия Классическая',
+                image: "item1",
+                description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+                weigt: "1050",
+                quantity: "32",
+                persons: "3",
+                kkal: "817",
+                normal_price: "1799₽",
+                discount_price: "1149₽",
+                status_new: 'iconnew',
+                status_discount: 'iconsale',
+                status_hot: 'iconpepper',
+                },
+                {title: 'Филадельфия Классическая',
+                        image: "item1",
+                        description: 'Лосось, творожный сыр Cremette, водоросли нори, рис',
+                        weigt: "1050",
+                        quantity: "32",
+                        persons: "3",
+                        kkal: "817",
+                        normal_price: "1799₽",
+                        discount_price: "1149₽",
+                        status_new: 'iconnew',
+                        status_discount: 'iconsale',
+                        status_hot: 'iconpepper',
+                        },
+    ]
+        //- первый вид карточки
+.offers-block
+  each val, index in items
+    .items-block__item
+        .card-header.d-flex.relative.inter
+            img(src=require('../images/'+val.image+'.png')).product-image
+            .circle-container.d-flex.jb.absolute
+                img(src=require('../images/'+val.status_discount+'.png')).circle            
+                img(src=require('../images/'+val.status_new+'.png')).circle
+                img(src=require('../images/'+val.status_hot+'.png')).circle
+        .card-content
+            h3 #{val.title}
+            p.mb24 #{val.description}
+            ul.short-information
+                li #{val.weigt} г
+                li #{val.quantity} шт.
+                li.icon-user-gray
+                    span &ensp;#{val.persons}
+                li.icon-Symbol
+                    span &ensp;#{val.kkal} Ккал
+        .card-footer.d-flex.ac
+            .price-container
+                div.price-current #{val.discount_price}
+                div.price-old #{val.normal_price}
+            button.base-button
+                span.icon-basket
+                span.price #{val.discount_price}
+                span.title В корзину
+    //- второй вид карточки
+  each val, index in items
+    .items-block__item
+        .card-header.d-flex.relative.inter
+            img(src=require('../images/'+val.image+'.png')).product-image
+            .circle-container.d-flex.jb.absolute
+                img(src=require('../images/'+val.status_discount+'.png')).circle            
+                img(src=require('../images/'+val.status_new+'.png')).circle
+                img(src=require('../images/'+val.status_hot+'.png')).circle
+        .card-content
+            h3 #{val.title}
+            p.mb24 #{val.description}
+            ul.short-information
+                li #{val.weigt} г
+                li #{val.quantity} шт.
+                li.icon-user-gray
+                    span &ensp;#{val.persons}
+                li.icon-Symbol
+                    span &ensp;#{val.kkal} Ккал
+        .card-footer
+            .price-container.d-flex.jc
+                p.price-current #{val.discount_price}
+                p.price-old #{val.normal_price}
+
+            .count-in-basket.d-flex.ac
+                button.minus 
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="minus">
+                    <path id="Line 2" d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    </g></svg>
+                span.fsb 1шт
+                button.plus
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12H18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 6L12 18" stroke="#9498A6" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+            button.in-basket.base-button
+                span.icon-basket
+                span В корзину
+
+
+- var adress = 'Томск, пр.Ленина, 41';
+- var openTime = 'с 09:30 до 23:00';
+- var deliveryTime = '~60-120 часов';
+//- о нас
+.about-block 
+    .additional-information            
+        .delivery-payments
+            .about-title
+                h3.delivery-time-openning Доставка и часы работы
+                h3.payments-method Способы оплаты
+                button.circle-button.small 
+                    span.icon-longarrow
+            .rectangle
+            ul.about-list
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/balls.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Самовывоз по адресу
+                        span.about-card-text #{adress}
+                        a(href="https://yandex.ru/maps/-/CDu-7QN1" target="_blank").about-card-link Смотреть на карте
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/delivery.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title #{openTime}
+                        span.about-card-text Принимаем и доставляем заказы
+                li.about-card-container
+                    .about-card-image-container
+                        img(src=require('../images/watch.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title #{deliveryTime}
+                        span.about-card-text Среднее время доставки
+                li.about-card-container 
+                    .about-card-image-container
+                        img(src=require('../images/wallet.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Наличными
+                        span.about-card-text Оплата наличными курьеру или в ресторане при получении заказа.
+                li.about-card-container 
+                    .about-card-image-container
+                        img(src=require('../images/credit-card.png')).about-card-image
+                    .about-card-content
+                        h3.about-card-title Банковской картой
+                        span.about-card-text Оплата заказа банковской картой при получении курьеру или в ресторане. 
+                        span.about-card-text Принимаются банковские карты MasterCard, Visa, МИР.
+                
+
+        .map-container
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A57bd8dfc09791c94938568fcb894a4e2e0e8d283165c40310249ff05619b1ad2lang=ru_RU&amp;scroll=true"></script>

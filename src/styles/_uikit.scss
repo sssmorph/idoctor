@@ -63,12 +63,19 @@
     font-weight: 600;
     line-height: 105%;
     color: #909AB2;
-
+    @include respond($laptop){
+        margin-bottom: 48px;
+      }
+    @include respond($tablet){
+    margin-bottom: 32px;
+    }
+    @include respond($tablet-sm){
+    margin-bottom: 24px;
+    }
     @include respond($mobile){
         padding: 12px;
         border-radius: 8px;
         margin-bottom: 24px;
-        
         font-size: 10px;
     }
     transition: 0.3s background-color ease-out;

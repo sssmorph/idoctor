@@ -139,7 +139,6 @@ h3{
     }
   }
   @include respond($tablet-sm){
-    margin-bottom: 0;
     .items-block__item {
       width: calc(100vw - 80px);
     }
@@ -769,6 +768,7 @@ h3{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  
   @include respond($desktop){
     height: 370px;
   }
@@ -792,6 +792,7 @@ h3{
     display: flex;
     flex-direction: column;
     gap:22px;
+    transform: translateX(5.28%);
     @include respond($laptop){
       gap:15px;
     }
@@ -800,6 +801,16 @@ h3{
     }
     @include respond($tablet-sm){
       gap: 9px;
+    }
+    .logotype{
+      @include respond($laptop){
+        width: 168px;
+        height: 112px;
+      }
+      @include respond($tablet-sm){
+        width: 92.5px;
+        height: 60.2px;
+      }
     }
     .under-logo-text{
       width: 138px;
@@ -811,13 +822,19 @@ h3{
       color: #fff;
       word-wrap: break-word;
       margin: 0 auto 0 40px;
-      @include respond($tablet){
-        font-size: 13px;
-      }
-      @include respond($mobile){
-        width: 55px;
+      
+      @include respond($laptop){
+        margin-left: 30px;
         font-size: 10px;
+        width: 96px;
       }
+      @include respond($tablet-sm){
+        font-size: 5.77px;
+        line-height: 7.79px;
+        width: 55px;
+        margin-left: 15px;
+      }
+
     }
   }
 }
@@ -1269,9 +1286,13 @@ h3{
               flex-direction: row;
               gap:12px;
               align-items: center;
+              
               @include respond($tablet-sm){
                 flex-direction: column-reverse;
                 gap:4px;
+              }
+              @include respond($mobile){
+
               }
               .review-date{
                 font-weight: 500;
@@ -1280,17 +1301,16 @@ h3{
                 color: rgba(125, 128, 139, 1);
                 @include respond($tablet-sm){
                   font-size: 12px;
-
                 }
               }
               .review-score{
                 height: 16px;
-                width: 18px;
                 display: flex;
                 flex-direction: row;
+                gap:2px;
                 @include respond($tablet-sm){
                   height: 10px;
-                  width: 11px;
+                  margin-right: auto;
                 }
                 & img{
                   height: 16px;
@@ -1364,8 +1384,21 @@ h3{
     box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
     border-radius: 20px;
     height: 420px;
+    margin-top: 68px;
     @include respond($tablet){
       background: none;
+      box-shadow: none;
+      padding: 0 0 16px 0;
+      border-bottom: 1px solid rgba(234, 234, 237, 1);
+      border-radius: 0;
+      height: 380px;
+    }
+    @include respond($laptop){
+      margin: 0;
+    }
+    @include respond($tablet-sm){
+      height: 220px;
+      gap:16px;
     }
     .make-review-header{
       display: flex;
@@ -1376,34 +1409,108 @@ h3{
         font-size: 36px;
         letter-spacing: -4%;
         margin: 0 auto;
+        @include respond($tablet-sm){
+          font-size: 18px;
+          margin:0;
+        }
       }
-      .make-review-text{
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 140%;
-        text-align: center;
-        margin: 0 auto;
-        width: 280px;
+      .make-review-text-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:8px;
+        .sale-image-text{
+          display: none;
+          @include respond($tablet-sm){
+            display: inline;
+            width: 22px;
+            height: 22px;
+          }
+        }
+        .make-review-text{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 140%;
+          text-align: center;
+          margin: 0 auto;
+          width: 280px;
+          @include respond($tablet-sm){
+            font-size: 11px;
+            line-height: 13.75px;
+            margin:0;
+            text-align: start;
+          }
+        }  
+      
       }
       .sale-image{
         width: 32px;
         height: 32px;
         margin: 0 auto;
+        @include respond($tablet-sm){
+          display: none;
+        }
       }
     }
     .review-service{
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap:8px;
       .review-service-item{
         background-color: rgba(246, 247, 250, 1);
         padding: 16px;
         border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         @include respond($tablet){
           background-color: rgba(255, 255, 255, 1);
           padding: 12px 8px;
           border-radius: 10px;
-
+        }
+        .service-item-logotype{
+          margin: 0 auto 12px auto;
+          height: 48px;
+          @include respond($tablet-sm){
+            margin-bottom: 8px;
+            height: 26px;
+          }
+        }
+        .service-item-title{
+          margin: 0 auto 8px auto;
+          font-weight: 600;
+          font-size: 20px;
+          letter-spacing: -2%;
+          @include respond($tablet-sm){
+            font-size: 13px;
+            margin-bottom: 4px;
+          }
+        }
+        .sevice-star-container{
+          margin: 0 auto 16px auto;
+          display: flex;
+          flex-direction: row;
+          gap:2px;
+          @include respond($tablet-sm){
+            margin-bottom: 8px;
+          }
+          & img{
+            @include respond($tablet-sm){
+              width: 11px;
+              height: 10px;
+            }
+          }
+        }
+        .service-score{
+          margin: 0 auto;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 140%;
+          @include respond($tablet-sm){
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: -2%;
+          }
         }
       }
     }
@@ -1461,9 +1568,6 @@ h3{
       font-size: 10px;
       margin: 0 8px;
     }
-  }
-  .separator:last-child{
-    display: none;
   }
 }
 

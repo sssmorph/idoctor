@@ -16,16 +16,19 @@
     a(href="").home-link
         img(src=require("../images/home-icon.png"))
     each val, index in itemsBreadcrumbs 
+        if index != 0
+            span.separator /    
         a(href=""+val.link).breadcrumbs-link #{val.text}
-        span.separator /
+
 
 //- блок отзывов
 
 
-h2.feedback-title Отзывы
-.feedback-block 
-    .reviews-container 
 
+.feedback-block 
+    
+    .reviews-container 
+        h2.feedback-title Отзывы
         ul.reviews-list-container 
             li.review-item 
                 .review-item-header
@@ -35,6 +38,10 @@ h2.feedback-title Отзывы
                         span.review-user-name Фамилия Имя 
                         .score-date
                             .review-score 
+                                img(src=require("../images/star-feedback.png"))
+                                img(src=require("../images/star-feedback.png"))
+                                img(src=require("../images/star-feedback.png"))
+                                img(src=require("../images/star-feedback.png"))
                                 img(src=require("../images/star-feedback.png"))
                             span.review-date 24 Января 2024
                 .review-item-content
@@ -51,8 +58,40 @@ h2.feedback-title Отзывы
         .make-review-header 
             img(src=require("../images/sale.png")).sale-image
             span.make-review-title Оставить отзыв
-            span.make-review-text Оставьте отзыв и получите скидочный промокод на следующий заказ!
-
+            .make-review-text-container 
+                img(src=require("../images/sale.png")).sale-image-text
+                span.make-review-text Оставьте отзыв и получите скидочный промокод на следующий заказ!
+        .review-service 
+            .review-service-item
+                img(src=require("../images/2gis.png")).service-item-logotype
+                span.service-item-title 2ГИС
+                .sevice-star-container 
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                span.service-score 4.8
+            .review-service-item 
+                img(src=require("../images/yandex.png")).service-item-logotype
+                span.service-item-title Яндекс
+                .sevice-star-container 
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                span.service-score 4.8
+            .review-service-item
+                img(src=require("../images/google.png")).service-item-logotype
+                span.service-item-title Google
+                .sevice-star-container 
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                    img(src=require("../images/star-feedback.png"))
+                span.service-score 4.8
 
     
 
