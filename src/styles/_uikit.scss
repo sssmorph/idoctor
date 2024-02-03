@@ -89,3 +89,21 @@
 .hiden{
     display: none;
 }
+.nutricion-info-circe{
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    @include respond($tablet-sm){
+        width: 6px;
+        height: 6px;
+    }
+}
+.yellow{
+    background-color: rgba(254, 206, 0, 1);
+}
+.dark-grey{
+    background-color: rgba(101, 107, 128, 1);
+}
+.light-grey{
+    background-color: rgba(199, 202, 213, 1);
+}
