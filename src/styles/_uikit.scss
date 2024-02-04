@@ -65,7 +65,7 @@
     color: #909AB2;
     @include respond($laptop){
         margin-bottom: 48px;
-      }
+    }
     @include respond($tablet){
     margin-bottom: 32px;
     }

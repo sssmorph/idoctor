@@ -104,14 +104,43 @@ section.full-info-card
                             span.delivery-time 60 мин.
                         span.open-time с 09:30 до 23:00
                     //- вставить ссылку 
-                    a.delivery-time(href="") Условия доставки
+                    a.delivery-terms(href="") Условия доставки
                 img(src=require("../images/delivery-card.png")).delivery-image
 
-
-                
-
-
-
+//- добавить к заказу
+-
+    var additives = [
+        {
+            image: "additive-pack",
+            title: "Набор к ролам",
+            price:"60",
+        },
+        {
+            image: "soy-sauce",
+            title: "Соевый соус",
+            price:"25",
+        },
+        {
+            image: "wasabi",
+            title: "Васаби",
+            price:"25",
+        },
+        {
+            image: "ginger",
+            title: "Имбирь",
+            price:"25",
+        },
+    ]
+.additives-block
+    h2.additives-title Наши преимущества
+    ul.additives-container 
+        each additive in additives 
+            li.additives-item 
+                img(src=require("../images/"+additive.image+".png"))
+                .additives-item-info 
+                    span.additive-item-title #{additive.title}
+                    button.additive-button 
+                        span #{additive.price}₽
 //- выгодные предложения
 
 h2.block-title.d-flex.jb.fsb
