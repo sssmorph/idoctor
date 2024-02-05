@@ -1,3 +1,94 @@
+//- хедер
+- 
+    var headLinks = [
+        {
+            link: "#", 
+            linkText: "Оплата и доставка",
+        },
+        {
+            link:"#", 
+            linkText: "Отзывы",
+        },
+        {
+            link:"#", 
+            linkText: "О компании",
+        },
+        {
+            link:"#", 
+            linkText: "Контакты",
+        },
+        ]
+-
+  var menuCategories = [
+    { title: "Наборы", link: "" },
+    { title: "Роллы и суши", link: "" },
+    { title: "Wок", link: "" },
+    { title: "Пицца", link: "" },
+    { title: "Суп", link: "" },
+    { title: "Салаты", link: "" },
+    { title: "Напитки", link: "" },
+    { title: "Закуски", link: "" },
+    { title: "Добавки", link: "" }
+  ]
+
+
+
+nav.page-header 
+    .header-head 
+        ul.head-content-container 
+            each item in headLinks
+                li.content-item-container
+                    a(href=item.link).item-content #{item.linkText}
+            li.content-item-container
+                a(href="mailto:piko-kitchen@yandex.ru").item-content-mail piko-kitchen@yandex.ru 
+                
+    .header-container 
+        nav.top-header 
+            .header-logotype 
+                img(src=require("../images/black-logo.png")).header-logotype-image
+                .vertical-line
+                span.header-logotype-title Доставка суши и роллов в Томске
+            .header-adress 
+                span.icon-geo
+                .adress-info 
+                    span.adress-info-title Томск, пр.Ленина, 41
+                    a(href="").adress-info-link Смотреть на карте
+            .header-open-time 
+                span.icon-watch 
+                p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
+            .header-phone 
+                span.icon-phone 
+                .phone-info 
+                    .phone-info-header 
+                        span.phone-info-content +7 (923) 406-11-12
+                        button.phone-button 
+                            span.icon-arrowl
+                    a(href="").phone-info-link перезвоните мне
+            .header-social-media-container
+                button.header-social-media-item
+                    span.icon-vk 
+                button.header-social-media-item 
+                    span.icon-telegram 
+                button.header-social-media-item 
+                    span.icon-whatsup
+
+        .header-line 
+
+        nav.header-navigation 
+            ul.header-navigation-container 
+                li.header-navigation-item 
+                    img(src=require("../images/sale.png"))
+                    a(hred="").header-navigation-link Акции
+                each category in menuCategories
+                    li.header-navigation-item
+                        a(href=category.link).header-navigation-link #{category.title}
+                
+                input(type="search", name="", placeholder='Поиск по сайту').search-bar
+                
+
+    
+
+
 //- хлебные крошки
 -
     var itemsBreadcrumbs = [
@@ -12,7 +103,7 @@
         },
     ]
 
-.breadcrumbs-container 
+nav.breadcrumbs-container 
     a(href="").home-link
         img(src=require("../images/home-icon.png"))
     each val, index in itemsBreadcrumbs 
@@ -324,3 +415,64 @@ h2.block-title.d-flex.jb.fsb
 
         .map-container
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A57bd8dfc09791c94938568fcb894a4e2e0e8d283165c40310249ff05619b1ad2lang=ru_RU&amp;scroll=true"></script>
+
+//- футер
+- 
+    var footerMenuCategoties = [
+        {title:"Меню", link:""},
+        {title:"Акции", link:""},
+        {title:"Оплата и доставка", link:""},
+        {title:"Отзывы", link:""},
+        {title:"О компании", link:""},
+        {title:"Контакты", link:""},
+    ]
+
+nav.page-header 
+    .header-container 
+        nav.top-header 
+            .header-logotype 
+                img(src=require("../images/black-logo.png")).header-logotype-image
+                .vertical-line
+                span.header-logotype-title Доставка суши и роллов в Томске
+            .header-adress 
+                span.icon-geo
+                .adress-info 
+                    span.adress-info-title Томск, пр.Ленина, 41
+                    a(href="").adress-info-link Смотреть на карте
+            .header-open-time 
+                span.icon-watch 
+                p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
+            .header-phone 
+                span.icon-phone 
+                .phone-info 
+                    .phone-info-header 
+                        span.phone-info-content +7 (923) 406-11-12
+                        button.phone-button 
+                            span.icon-arrowl
+                    a(href="").phone-info-link перезвоните мне
+            .header-social-media-container
+                button.header-social-media-item
+                    span.icon-vk 
+                button.header-social-media-item 
+                    span.icon-telegram 
+                button.header-social-media-item 
+                    span.icon-whatsup
+
+        .header-line 
+
+        nav.header-navigation 
+            ul.header-navigation-container 
+                each category in footerMenuCategoties
+                    li.footer-navigation-item
+                        a(href=category.link).header-navigation-link #{category.title}
+                li.footer-navigation-link 
+                    button(href="") Наверх
+    .footer-information 
+        p.copyright ©2024 Piko Kitchen. Все права защищены
+        a(href="mailto:piko-kitchen@yandex.ru").footer-mail-link piko-kitchen@yandex.ru
+        p.offer-text Информация на сайте носит справочный характер. Внешний вид и состав блюд могут отличаться от представленных на сайте. Подробности у операторов. акции и скидки не суммируются и не распространяются на наборы, десерты, напитки
+        a(href="").privacy-policy Политика конфиденциальности
+        p.agency-link Дизайн: Gouxit Agency / Разработка: Ledoffsky Agency
+
+
+
