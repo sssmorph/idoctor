@@ -71,6 +71,16 @@ nav.page-header
                     span.icon-telegram 
                 button.header-social-media-item 
                     span.icon-whatsup
+            //- тут 3 вида кнопки корзины
+            .header-basket-button-container
+                button.header-basket-button 
+                    span.icon-basket
+                    span.header-basket-button-title Корзина
+                    .header-basket-vertical-line 
+                    span.header-basket-price 4900₽
+                    .header-basket-count-container
+                        span.header-basket-count 4
+                        
 
         .header-line 
 
@@ -83,12 +93,9 @@ nav.page-header
                     li.header-navigation-item
                         a(href=category.link).header-navigation-link #{category.title}
                 
-                input(type="search", name="", placeholder='Поиск по сайту').search-bar
+                input(type="search", name="", placeholder='Поиск по сайту').search-bar 
+                    
                 
-
-    
-
-
 //- хлебные крошки
 -
     var itemsBreadcrumbs = [
@@ -457,6 +464,10 @@ nav.page-header
                     span.icon-telegram 
                 button.header-social-media-item 
                     span.icon-whatsup
+            .footer-basket-button-container
+                button.footer-basket-button
+                    span.icon-basket 
+                    span.footer-button-title Сделать заказ
 
         .header-line 
 
@@ -473,6 +484,8 @@ nav.page-header
         p.offer-text Информация на сайте носит справочный характер. Внешний вид и состав блюд могут отличаться от представленных на сайте. Подробности у операторов. акции и скидки не суммируются и не распространяются на наборы, десерты, напитки
         a(href="").privacy-policy Политика конфиденциальности
         p.agency-link Дизайн: Gouxit Agency / Разработка: Ledoffsky Agency
+
+//- menu for mobile version
 
 
 
