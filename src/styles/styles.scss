@@ -2559,11 +2559,24 @@ h3{
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-
+        gap:38.5px;
+        @include respond($large){
+          gap: 24px 20px;
+        }
+        @include respond($laptop){
+          gap: 20px 60px;
+        }
+        @include respond($tablet-lg){
+          gap: 20px 40px;
+        }
+        @include respond($tablet){
+          gap:20px 30px;
+        }
         @include respond(800px){
           flex-wrap: nowrap;
           overflow: auto;
           margin-top:20px;
+          gap:4px;
           &::-webkit-scrollbar{
             display: none;
           }
@@ -2573,7 +2586,7 @@ h3{
           font-size: 16px;
           line-height: 100%;
           text-wrap: nowrap;
-
+          
           @include respond(800px){
             padding: 8px 12px;
             border-radius: 8px;
@@ -2655,6 +2668,7 @@ h3{
           background-color: rgba(246, 247, 250, 1);
           padding: 16px 20px;
           gap:8px;
+          margin-left: auto;
           @include respond($desktop){
             gap:4px;
           }
