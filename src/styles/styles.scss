@@ -737,7 +737,7 @@ h3{
     font-size: 9px;
     line-height: 140%;
   }
-  .hiden-seo-text{
+  .hidden-seo-text{
     @include respond($tablet-sm){
       display: none;
     }
@@ -1517,20 +1517,48 @@ h3{
 // карточка товара
 
 .full-info-card{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+
   gap:32px;
   height: 540px;
   margin-bottom: 24px;
-  @include respond($tablet-sm){
+  @include respond($large){
+    gap:24px;
+  }
+  @include respond($desktop){
   margin-bottom: 12px;
+  flex-direction: column;
+  height: auto;
+  gap:0;
   }
   .photo-card-container{
     position: relative;
-    height: 540px;
+
     .photo-card{
-      border-radius: 20px;
-      
+      border-radius: 20px;     
+      height: 100%;
+      object-fit: cover;
+      @include respond($container){
+        width: calc((100vw - 112px) / 2);
+      }
+      @include respond($large){
+        width: calc((100vw - 104px) / 2);
+      }
+      @include respond($desktop){
+        width: calc(100vw - 80px);
+        max-height: 50vh;
+        border-radius: 10px;
+      }
+      @include respond($laptop){
+        max-height: 45vh;
+      }
+      @include respond($tablet-lg){
+        max-height: 40vh;
+      }
+      @include respond($mobile){
+        width: calc(100vw - 24px);
+      }
     }
     .circle-container{
       position: absolute;
@@ -1540,6 +1568,14 @@ h3{
       display: flex;
       flex-direction: row;
       gap:4px;
+      @include respond($tablet-sm){
+        width: 84.5px;
+        gap:3.25px;
+        .circle{
+          width: 26px;
+          height: 26px;
+        }
+      }
     }
   }
   .full-info-card-container{
@@ -1547,12 +1583,40 @@ h3{
     padding: 32px 48px;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
-    height: 540px;
+    width: calc((100vw - 112px) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:10px;
+    @include respond($large){
+      width: calc((100vw - 104px) / 2);
+      padding: 24px 36px;
+    }
+    @include respond($desktop){
+      width: calc(100vw - 80px);
+
+    }
+    @include respond($tablet-sm){
+      border-radius: 10px;
+      padding: 16px;
+    }
+    @include respond($mobile){
+      width: calc(100vw - 24px);
+    }
     .top-container{
       display: flex;
       flex-direction: column;
       gap:24px;
-      margin-bottom: 22px;
+      @include respond(1560px){
+        gap:20px;
+      }
+      @include respond($large){
+        gap:16px;
+      }
+      @include respond($tablet-sm){
+        gap:12px;
+        margin-bottom: 24px;
+      }
       .short-information{
         gap:4px;
         font-weight: 500;
@@ -1563,15 +1627,13 @@ h3{
         flex-wrap:wrap;
         align-items: center;
         color:rgba(148, 152, 166, 1);
-
-        @include respond($mobile){
-          font-size: 9px;
+        @include respond($tablet-sm){
+          font-size: 10px;
+          line-height: 120%;
+          letter-spacing: -2%;
         }
         li:last-child{
           margin-left: auto;
-          }
-          @include respond($mobile){
-          margin-left: 0;
           }
         }
     
@@ -1581,29 +1643,36 @@ h3{
           border-radius: 8px;
           display: flex;
           align-items: center;
-          @include respond($large){
-            font-size: 10px;
-          }
           @include respond($tablet-lg){
             padding: 5px;
           }
-          @include respond($mobile){
+          @include respond($tablet-sm){
             padding: 4px;
             border-radius: 4px;
           }
           span{
             font-family: Inter, sans-serif;
-    
           }
       }
       .info-card-title{
         margin-bottom: 0;
+        @include respond($tablet-sm){
+          font-size: 18px;
+          line-height: 125%;
+          letter-spacing: -4%;
+        }
       }
       .dish-component-container{
         display: flex;
         flex-direction: row;
         gap:8px;
         flex-wrap: wrap;
+        @include respond($large){
+          gap:6px;
+        }
+        @include respond($tablet-lg){
+          gap:4px;
+        }
         .dish-component{
           padding: 4px 8px;
           color: rgba(101, 107, 128, 1);
@@ -1612,6 +1681,14 @@ h3{
           font-size: 14px;
           line-height: 16.33px;
           font-weight: 500;
+          border-radius: 8px;
+          @include respond($tablet-sm){
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 135%;
+
+          }
         }
       }
       .nutrition-info-container{
@@ -1621,30 +1698,45 @@ h3{
         display: flex;
         flex-direction: column;
         gap:12px;
+        @include respond($large){
+          padding: 16px 0;
+          gap:8px;
+        }
+        @include respond($tablet){
+          padding: 12px 0;
+        }
         .nutricion-info-title{
           font-weight: 500;
           font-size: 15px;
           line-height: 140%;
+          @include respond($tablet){
+            font-size: 10px;
+            line-height: 120%;
+            letter-spacing: -2%;
+          }
 
         }
-        .nutricion-base-line{
+        .nutricion-line-container{
           height: 4px;
-          position: relative;
           border-radius: 20px;
+          display: flex;
+          flex-direction: row;
+          @include respond($tablet){
+            height: 2px;
+          }
         }
-        .nutricion-first-addictional-line{
-          position: absolute;
-          width: 140px;
-          height: 4px;
+        .nutricion-protein-line{
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 20px;
+          width: 45%;
+        }
+        .nutricion-fats-line{
           top:0;
           right: 268px;
+          width: 25%;
         }
-        .nutricion-second-addicional-line{
-          position: absolute;
-          right: 0;
-          top: 0;
-          width: 269px;
-          height: 4px;
+        .nutricion-carbs-line{
+          width: 30%;
           border-top-right-radius: 20px;
           border-bottom-right-radius: 20px;
         }
@@ -1653,6 +1745,16 @@ h3{
           flex-direction: row;
           gap:24px;
           height: 14px;
+          @include respond($desktop){
+            gap: 20px;
+          }
+          @include respond($tablet-lg){
+            gap: 16px;
+          }
+          @include respond($tablet-sm){
+            height: 12px;
+            gap:12px;
+          }
           & li{
             padding: 0;
             background: none;
@@ -1661,6 +1763,11 @@ h3{
             color:rgba(148, 152, 166, 1);
             display: flex;
             gap:4px;
+            @include respond($tablet-sm){
+              font-size: 10px;
+              line-height: 120%;
+              letter-spacing: -2%;
+            }
           }
         }
       }
@@ -1669,12 +1776,18 @@ h3{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      height: 116px;
+      
+      @include respond($tablet-lg){
+        flex-direction: column;
+        gap:24px;
+      }
       .price-basket-container{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
+        @include respond($tablet-lg){
+          gap:24px;
+        }
         .price-container{
           display: flex;
           flex-direction: row;
@@ -1686,12 +1799,19 @@ h3{
             color: rgba(148, 152, 166, 1);
             line-height: 135%;
             text-decoration: line-through;
+            @include respond($tablet){
+              font-size: 17px;
+              line-height: 125%;
+            }
           }
           .current-price{
             font-weight: 600;
             font-size: 36px;
             letter-spacing: -4%;
-
+            @include respond($tablet){
+              font-size: 24px;
+              letter-spacing: -4%;
+            }
           }
         }  
         & button{
@@ -1703,20 +1823,35 @@ h3{
           align-items: center;
           width: 222px;
           height: 56px;
+          @include respond($tablet-lg){
+            width: auto;
+            justify-content: center;
+            height: 46px;
+            padding: 16px 12px;
+            gap:4px;
+          }
           span{
             font-size: 15px;
             font-weight: 600;
             line-height: 105%;
-            
             text-wrap: nowrap;
-
+            @include respond($tablet-lg){
+              font-size: 11px;
+            }
           }
           span:first-child{
             font-size: 24px;
             width: 24px;
+            @include respond($tablet-lg){
+              font-size: 14px;
+              width: 14px;
+            }
           }
           span:last-child{
             height: 15px;
+            @include respond($tablet-lg){
+              height: 12px;
+            }
           }
         }
       }
@@ -1728,14 +1863,29 @@ h3{
         padding: 20px 24px;
         border-radius: 12px;
         background-color: rgba(249, 249, 252, 1);
+        @include respond($large){
+          gap:20px;
+          padding: 16px 20px;
+        }
+        @include respond($tablet-lg){
+          padding: 12px 16px;
+          border-radius: 8px;
+          justify-content: space-between;
+
+        }
         .information-container{
           display: flex;
           flex-direction: column;
           gap:12px;
+          @include respond($tablet){
+            gap:8px;
+          }
+
           .information-delivery-container{
             display: flex;
             flex-direction: column;
             gap:4px;
+
             .delivery-time-container{
               display: flex;
               flex-direction: row;
@@ -1743,6 +1893,11 @@ h3{
               align-items: center;
               font-size: 15px;
               font-weight: 600;
+              @include respond($tablet){
+                font-size: 12px;
+                line-height: 125%;
+                font-weight: 500;
+              }
               &.title{
                 color:rgba(33, 32, 31, 1);
               }
@@ -1751,11 +1906,19 @@ h3{
                 border-radius: 4px;
                 background-color: rgba(148, 152, 166, 1);
                 color: #fff;
+                @include respond($tablet){
+                  padding: 2px 4px;
+                }
               }
             }
             .open-time{
               font-size: 15px;
               font-weight: 600;
+              @include respond($tablet){
+                font-size: 12px;
+                line-height: 125%;
+                font-weight: 500;
+              }
             }
           }
         }
@@ -1763,6 +1926,11 @@ h3{
           font-weight: 400;
           font-size: 14px;
           color: rgba(125, 128, 139, 1);
+          @include respond($tablet){
+            font-size: 11px;
+            line-height: 125%;
+            font-weight: 500;
+          }
         }
         .delivery-image{
           width: 45px;
@@ -1979,10 +2147,14 @@ h3{
   }
   .header-head{
     padding: 0 32px;
+    @include respond(800px){
+      display: none;
+    }
     .head-content-container{
       display: flex;
       flex-direction: row;
       gap:20px;
+
       .content-item-container{
         .item-content{
           text-decoration: none;
@@ -1994,6 +2166,9 @@ h3{
       }
       .content-item-container:last-child{
         margin-left: auto;
+        @include respond(750px){
+          display: none;
+        }
         .item-content-mail{
           font-size: 14px;
           font-weight: 500;
@@ -2004,179 +2179,341 @@ h3{
     }
   } 
   .header-container{
-    border-radius: 20px;
-    padding: 20px 32px;
-    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
-
+    @include respond(800px){
+      box-shadow: none;
+    }
     .top-header{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      .header-logotype{
+      // margin-bottom: 20px;
+      background-color: rgba(255, 255, 255, 1);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      padding: 20px 32px 20px 32px;
+      @include respond($large){
+        flex-direction: column;
+        gap:20px;
+      }
+      @include respond(800px){
+        box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+        border-radius: 20px;
+      }
+      .top-header-left-part{
         display: flex;
         flex-direction: row;
-        gap:24px;
+        justify-content: space-between;
+        gap:10px;
         align-items: center;
-        height: 46px;
-        .header-logotype-image{
-          transform: translateY(-10.8%);
+        flex: 1 0 0;
+        @include respond($large){
+          border-bottom: 1px solid rgba(234, 234, 237, 1);
+          padding-bottom: 20px;
         }
-        .vertical-line{
-          width: 1px;
-          background-color: rgba(234, 234, 237, 1);
+        @include respond($tablet-sm){
+          padding-bottom: 12px;
+        }
+        .header-logotype{
+          display: flex;
+          flex-direction: row;
+          gap:24px;
+          align-items: center;
           height: 46px;
-        }
-        .header-logotype-title{
-          width: 129px;
-          font-size: 14px;
-          line-height: 135%;
-          font-weight: 500;
-          word-wrap: break-word;
-        }
-      }
-      .header-adress{
-        display: flex;
-        flex-direction: row;
-        gap:8px;
-        align-items: center;
-        & span{
-          font-size: 24px;
-        }
-        .adress-info{
-          display: flex;
-          flex-direction: column;
-          gap:4px;
-          .adress-info-title{
+          @include respond($large){
+            gap:16px;
+          }
+          @include respond($tablet-lg){
+            gap:12px;
+          }
+          @include respond($tablet-sm){
+            height: 30px;
+          }
+          .header-logotype-image{
+            transform: translateY(-10.8%);
+            height: 100%;
+          }
+          .vertical-line{
+            width: 1px;
+            background-color: rgba(234, 234, 237, 1);
+            height: 100%;
+          }
+          .header-logotype-title{
+            width: 129px;
             font-size: 14px;
-            line-height: 100%;
+            line-height: 135%;
             font-weight: 500;
-            color:rgba(33, 32, 31, 1);
+            word-wrap: break-word;
+            @include respond($tablet-sm){
+              font-size: 10px;
+              line-height: 125%;
+              width: 92px;
+            }
           }
-          .adress-info-link{
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 100%;
-            color:rgba(125, 128, 139, 1);
-          }
         }
-      }
-      .header-open-time{
-        display: flex;
-        flex-direction: row;
-        gap:8px;
-        align-items: center;
-        & span{
-          font-size: 24px;
-        }
-        .open-time-info{
-          font-size: 14px;
-          line-height: 135%;
-          font-weight: 500;
-        }
-      }
-      .header-phone{
-        display: flex;
-        flex-direction: row;
-        gap:8px;
-        align-items: center;
-        & span{
-          font-size: 24px;
-        }
-        .phone-info{
+        .wrapper-adress-open-time{
           display: flex;
-          flex-direction: column;
-          gap:4px;
-          .phone-info-header{
+          justify-content: space-around;
+          flex-direction: row;
+          width: 100%;
+          gap: 10px;
+          @include respond($large){
+            justify-content: space-between;
+            margin-left: 20px;
+          }
+          .header-adress{
             display: flex;
             flex-direction: row;
             gap:8px;
             align-items: center;
-            .phone-info-content{
-              font-weight: 700;
-              font-size: 20px;
-              line-height: 100%;
-              letter-spacing: -2%;
+            @include respond(800px){
+              display: none;
             }
-            .phone-button{
-              border-radius: 2px;
-              width: 17px;
-              height: 16px;
-              background-color: rgba(246, 247, 250, 1);
-              transform: rotate(-0.25turn);
-              span{    
-                font-size: 8px;
-                color: rgba(148, 152, 166, 1);
+            & span{
+              font-size: 24px;
+            }
+            .adress-info{
+              display: flex;
+              flex-direction: column;
+              gap:4px;
+              .adress-info-title{
+                font-size: 14px;
+                line-height: 100%;
+                font-weight: 500;
+                color:rgba(33, 32, 31, 1);
+              }
+              .adress-info-link{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 100%;
+                color:rgba(125, 128, 139, 1);
               }
             }
           }
-          .phone-info-link{
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 100%;
-            color:rgba(125, 128, 139, 1);
+          .header-open-time{
+            display: flex;
+            flex-direction: row;
+            gap:8px;
+            align-items: center;
+            @include respond(650px){
+              display: none;
+            }
+            & span{
+              font-size: 24px;
+            }
+            .open-time-info{
+              font-size: 14px;
+              line-height: 135%;
+              font-weight: 500;
+            }
           }
         }
+        .burger{
+          border-radius: 50%;
+          width: 38px;
+          height: 38px;
+          background-color: rgba(33, 32, 31, 1);
+          gap:2.6px;
+          display: none;
+          margin-left: auto;
+          @include respond(800px){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          @include respond($tablet-sm){
+            width: 32px;
+            height: 32px;
+          }
+          .burger-line{
+            width: 50%;
+            height: 1.5px;
+            border-radius: 4px;
+            background-color: #fff;
+          }
+        }
+  
       }
-      .header-social-media-container{
+      .top-header-right-part{
         display: flex;
         flex-direction: row;
-        gap:8px;
-        .header-social-media-item{
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background-color: rgba(246, 247, 250, 1);
-          span{
-            font-size: 22px;
-          }
-        }
-      }
-      .header-basket-button-container{
-        .header-basket-button{
-          padding: 16px 20px;
-          border-radius: 90px;
-          background: linear-gradient(95.02deg, #FECE00 38.11%, #FFDF57 93.2%);
+        justify-content: space-between;
+        gap:5px;
+        width: 100%;
+        flex: 1 0 0;
+        .header-phone{
           display: flex;
           flex-direction: row;
           gap:8px;
           align-items: center;
-          span:first-child{
+          margin-left: 10px;
+          @include respond($tablet-sm){
+            margin-left:0;
+            gap:4px;
+          }
+          & span{
             font-size: 24px;
+            @include respond($tablet-sm){
+              font-size: 16px;
+            }
           }
-          .header-basket-button-title{
-            font-size: 15px;
-            font-weight: 600;
-            line-height: 105%;
-          }
-          .header-basket-vertical-line{
-            width: 1px;
-            height: 24px;
-            margin: 0 4px;
-            background-color: rgba(219, 177, 0, 1);
-          }
-          .header-basket-price{
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 105%;
-          }
-          .header-basket-count-container{
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 1);
+          .phone-info{
             display: flex;
-            align-items: center;
-            justify-content: center;
-            .header-basket-count{
-              font-size: 12px;
+            flex-direction: column;
+            gap:4px;
+            .phone-info-header{
+              display: flex;
+              flex-direction: row;
+              gap:8px;
+              align-items: center;
+              .phone-info-content{
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 100%;
+                letter-spacing: -2%;
+                @include respond($large){
+                  font-size: 16px;
+                }
+                @include respond($tablet-sm){
+                  font-size: 13px;
+                }
+              }
+              .phone-button{
+                border-radius: 2px;
+                width: 17px;
+                height: 16px;
+                background-color: rgba(246, 247, 250, 1);
+                transform: rotate(-0.25turn);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include respond($tablet-sm){
+                  width: 14px;
+                  height: 13.18px;
+                  
+                }
+                span{    
+                  font-size: 8px;
+                  color: rgba(148, 152, 166, 1);
+                  @include respond($tablet-sm){
+                    font-size: 6px;
+                  }
+                }
+              }
+            }
+            .phone-info-link{
+              font-weight: 400;
+              font-size: 14px;
               line-height: 100%;
-              font-weight: 600;
-              text-align: center;             
+              color:rgba(125, 128, 139, 1);
+              @include respond($tablet-sm){
+                font-size: 10px;
+              }
             }
           }
         }
+        .header-social-media-container{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap:8px;
+          @include respond($large){
+            margin-left: auto;
+            margin-right: 50px;
+          }
+          @include respond($tablet){
+            margin-right: 20px;
+          }
+          @include respond($tablet-sm){
+            gap:4px;
+            margin-right: 0;
+          }
+          .header-social-media-item{
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: rgba(246, 247, 250, 1);
+            @include respond($large){
+              width: 38px;
+              height: 38px;
+            }
+            @include respond($tablet-sm){
+              width: 30px;
+              height: 30px;
+
+            }
+            span{
+              font-size: 22px;
+              @include respond($tablet-sm){
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .header-basket-button-container{
+          
+          @include respond(700px){
+            display: none;
+          }
+          .header-basket-button{
+            padding: 16px 20px;
+            border-radius: 90px;
+            background: linear-gradient(95.02deg, #FECE00 38.11%, #FFDF57 93.2%);
+            display: flex;
+            flex-direction: row;
+            gap:8px;
+            align-items: center;
+            
+            span:first-child{
+              font-size: 24px;
+            }
+            .header-basket-button-title{
+              font-size: 15px;
+              font-weight: 600;
+              line-height: 105%;
+              @include respond($tablet){
+                display: none;
+              }
+            }
+            .header-basket-right-part{
+              border-left: solid rgba(219, 177, 0, 1) 1px;
+              display: flex;
+              flex-direction: row;
+              padding: 4px 12px;
+              gap:8px;
+              @include respond($tablet){
+                border-left: none;
+                padding: 0;
+              }
+
+              .header-basket-price{
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 105%;
+              }
+              .header-basket-count-container{
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .header-basket-count{
+                  font-size: 12px;
+                  line-height: 100%;
+                  font-weight: 600;
+                  text-align: center;             
+                }
+              }            
+            }
+  
+          }
+        }
       }
+      // вторая часть
+
       .footer-basket-button-container{
         .footer-basket-button{
           border-radius: 90px;
@@ -2189,34 +2526,72 @@ h3{
           span:first-child{
             font-size: 24px;
           }
-          .footer-button-title{
+          // .footer-button-title{
 
 
-          }
+          // }
         }
       }
     }
 
-    .header-line{
-      height: 1px;
-      background-color: rgba(234, 234, 237, 1);
-      margin: 20px 0;
-    }
+
     .header-navigation {
+      padding: 0px 32px 20px 32px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background-color: rgb(255, 255, 255);
+      @include respond(800px){
+        background: none;
+        border-radius: 0;
+        padding: 0;
+      }
+      .border-line{
+        margin-bottom:20px;
+        height: 1px;
+        background-color: rgba(234, 234, 237, 1);
+        @include respond(800px){
+          display: none;
+        }
+      }
       .header-navigation-container{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap:24px;
+        flex-wrap: wrap;
+
+        @include respond(800px){
+          flex-wrap: nowrap;
+          overflow: auto;
+          margin-top:20px;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
         .header-navigation-item{
           color: rgba(33, 32, 31, 1);
           font-size: 16px;
           line-height: 100%;
+          text-wrap: nowrap;
+
+          @include respond(800px){
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+          }
+          @include respond($tablet-sm){
+            font-size:12px;
+            padding: 8px;
+          }
           .header-navigation-link{
             text-decoration: none;
             color:rgba(33, 32, 31, 1);
             transition: .19s background-color linear;
+            @include respond(800px){
+              color:rgba(144, 154, 178, 1)
+            }
+
           }
           .header-navigation-link:hover{
             border-bottom: 2px solid rgba(254, 206, 0, 1);
@@ -2230,9 +2605,16 @@ h3{
           flex-direction: row;
           gap:8px;
           align-items: center;
+          @include respond(800px){
+            background-color: #fff;
+
+          }
           img{
             width: 20px;
             height: 20px;
+            @include respond(800px){
+              display: none;
+            }
           }
         }
         .header-navigation-item:last-child{
@@ -2265,13 +2647,37 @@ h3{
             
           }
         }
-        .search-bar{
-          padding: 16px 20px;
-          background-color: rgba(246, 247, 250, 1);
+        .header-search-container{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
           border-radius: 90px;
-          height: 50px;
-          border: none;
+          background-color: rgba(246, 247, 250, 1);
+          padding: 16px 20px;
+          gap:8px;
+          @include respond($desktop){
+            gap:4px;
+          }
+          @include respond(800px){
+            display: none;
+          }
+          .search-bar{
+            background-color: rgba(246, 247, 250, 1);
+            border: none;
+            font-size: 15px;
+            line-height: 100%;
+            font-weight: 500;
+            padding: 0;
+            height: 15px;
+          }
+          .search-bar::-webkit-search-cancel-button {
+            display: none;
+          }  
+          .header-search-button{
+            height: 18px;
+          }        
         }
+
       }
     }
   }
@@ -2284,6 +2690,9 @@ h3{
     font-size: 14px;
     font-weight: 500;
     color:rgba(148, 152, 166, 1);
+    @include respond($tablet-sm){
+      flex-direction: column;
+    }
     & a{
       color:rgba(148, 152, 166, 1);
       font-size: 14px;
@@ -2307,7 +2716,145 @@ h3{
   margin-bottom: 0;
   gap:0;
 }
+// базовое меню
+.bottom-menu{
+  display: none;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 8px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -15px 25px 0px rgba(172, 172, 172, 0.2);
+  z-index: 2  ;
+  @include respond(700px){
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+  }
+  .bottom-button-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s buttonActive ease-out;
+    .buttom-button-image{
+      width: 32px;
+      height: 32px;
+      padding: 8px;
+      border-radius: 50%;
+      background-color: rgba(246, 246, 248, 1);
+      margin-bottom: 3px;
+      img{
+        width: auto;
+      }
+    }
 
+    & span{
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 125%;
+      text-align: center;
+      @include respond($tablet-sm){
+        font-size: 12px;
+      }
+    }
+  }
+  .bottom-button-item:active{
+    .buttom-button-image{
+      background:linear-gradient(95.02deg, #FECE00 38.11%, #FFDF57 93.2%);
+    }
+  }
+}
+// меню поиска
+.open-bottom-search{
+  position: fixed;
+  box-shadow: 0px -15px 25px 0px rgba(234, 234, 237, 0.36);
+  background-color: rgba(255, 255, 255, 1);
+  bottom: 55px;
+  left: 0;
+  height: 112px;
+  width: 100vw;
+  padding: 28px 28px 32px 28px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  display: none;
+  .bottom-search-container{
+    display: flex;
+    flex-direction: row;
+    padding: 12px 16px;
+    background-color: rgba(246, 247, 250, 1);
+    border-radius: 90px;
+    justify-content: space-between;
+    align-items: center;
+    .search{
+      border: none;
+      padding: 0;
+      background-color: rgba(246, 247, 250, 1);
+      width: 100%;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 135%;
+      color:rgba(148, 152, 166, 1);
+    }
+    .search::-webkit-search-cancel-button {
+      display: none;
+    }
+    .bottom-search-button{
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
+}
+// менюшка с категориями товаров
+.open-bottom-menu{
+  position: fixed;
+  bottom: 55px;
+  left: 0;
+  height: 45vh;
+  width: 100vw;
+  box-shadow: 0px -15px 25px 0px rgba(234, 234, 237, 0.36);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 28px 28px 32px 28px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  display: none;
+  .open-bottom-menu-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap:2.5%;
+    .open-bottom-menu-item{
+      border-radius: 12px;
+      padding: 12px 16px;
+      background-color: rgba(246, 246, 248, 1);
+      .open-menu-link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap:4px;
+        .open-menu-image{
+          padding: 6px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+        .open-menu-title{
+          text-decoration: none;
+          text-align: center;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 125%;
+          color: rgba(33, 32, 31, 1);
+        }
+      }
+    }
+  }
+}
 
 //  подключение икомуна
 [class^="icon-"], [class*=" icon-"] {

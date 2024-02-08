@@ -20,20 +20,20 @@
         ]
 -
   var menuCategories = [
-    { title: "Наборы", link: "" },
-    { title: "Роллы и суши", link: "" },
-    { title: "Wок", link: "" },
-    { title: "Пицца", link: "" },
-    { title: "Суп", link: "" },
-    { title: "Салаты", link: "" },
-    { title: "Напитки", link: "" },
-    { title: "Закуски", link: "" },
-    { title: "Добавки", link: "" }
+    { title: "Наборы", link: "", image: "menu-sets" },
+    { title: "Роллы и суши", link: "", image: "menu-sushi" },
+    { title: "Wок", link: "", image: "menu-wok" },
+    { title: "Пицца", link: "", image:"menu-pizza" },
+    { title: "Суп", link: "", image:"menu-soup" },
+    { title: "Салаты", link: "", image: "menu-salad" },
+    { title: "Напитки", link: "", image: "menu-drink" },
+    { title: "Закуски", link: "", image: "menu-snack" },
+    { title: "Добавки", link: "", image: "menu-add" }
   ]
 
 
 
-nav.page-header 
+header.page-header 
     .header-head 
         ul.head-content-container 
             each item in headLinks
@@ -44,47 +44,54 @@ nav.page-header
                 
     .header-container 
         nav.top-header 
-            .header-logotype 
-                img(src=require("../images/black-logo.png")).header-logotype-image
-                .vertical-line
-                span.header-logotype-title Доставка суши и роллов в Томске
-            .header-adress 
-                span.icon-geo
-                .adress-info 
-                    span.adress-info-title Томск, пр.Ленина, 41
-                    a(href="").adress-info-link Смотреть на карте
-            .header-open-time 
-                span.icon-watch 
-                p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
-            .header-phone 
-                span.icon-phone 
-                .phone-info 
-                    .phone-info-header 
-                        span.phone-info-content +7 (923) 406-11-12
-                        button.phone-button 
-                            span.icon-arrowl
-                    a(href="").phone-info-link перезвоните мне
-            .header-social-media-container
-                button.header-social-media-item
-                    span.icon-vk 
-                button.header-social-media-item 
-                    span.icon-telegram 
-                button.header-social-media-item 
-                    span.icon-whatsup
-            //- тут 3 вида кнопки корзины
-            .header-basket-button-container
-                button.header-basket-button 
-                    span.icon-basket
-                    span.header-basket-button-title Корзина
-                    .header-basket-vertical-line 
-                    span.header-basket-price 4900₽
-                    .header-basket-count-container
-                        span.header-basket-count 4
+            .top-header-left-part
+                .header-logotype 
+                    img(src=require("../images/black-logo.png")).header-logotype-image
+                    .vertical-line
+                    span.header-logotype-title Доставка суши и роллов в Томске
+                .wrapper-adress-open-time
+                    .header-adress 
+                        span.icon-geo
+                        .adress-info 
+                            span.adress-info-title Томск, пр.Ленина, 41
+                            a(href="").adress-info-link Смотреть на карте
+                    .header-open-time 
+                        span.icon-watch 
+                        p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
+                    button.burger 
+                        .burger-line 
+                        .burger-line
+                        .burger-line
+            
+            .top-header-right-part
+                .header-phone 
+                    span.icon-phone 
+                    .phone-info 
+                        .phone-info-header 
+                            span.phone-info-content +7 (923) 406-11-12
+                            button.phone-button 
+                                span.icon-arrowl
+                        a(href="").phone-info-link перезвоните мне
+                .header-social-media-container
+                    button.header-social-media-item
+                        span.icon-vk 
+                    button.header-social-media-item 
+                        span.icon-telegram 
+                    button.header-social-media-item 
+                        span.icon-whatsup
+                //- тут 3 вида кнопки корзины
+                .header-basket-button-container
+                    button.header-basket-button 
+                        span.icon-basket
+                        span.header-basket-button-title Корзина
+                        .header-basket-right-part 
+                            span.header-basket-price 4900₽
+                            .header-basket-count-container
+                                span.header-basket-count 4
                         
 
-        .header-line 
-
         nav.header-navigation 
+            .border-line
             ul.header-navigation-container 
                 li.header-navigation-item 
                     img(src=require("../images/sale.png"))
@@ -93,7 +100,11 @@ nav.page-header
                     li.header-navigation-item
                         a(href=category.link).header-navigation-link #{category.title}
                 
-                input(type="search", name="", placeholder='Поиск по сайту').search-bar 
+                .header-search-container 
+                    input(type="search", name="" placeholder="Поиск по сайту").search-bar 
+                    button.header-search-button 
+                        img(src=require("../images/lupa.png"))
+
                     
                 
 //- хлебные крошки
@@ -172,9 +183,10 @@ section.full-info-card
                     li.dish-component #{dish.name} - #{dish.quantity} шт
             .nutrition-info-container
                 span.nutricion-info-title Пищевая ценность на 100 г продукта:
-                .nutricion-base-line.yellow
-                    .nutricion-first-addictional-line.dark-grey
-                    .nutricion-second-addicional-line.light-grey
+                .nutricion-line-container
+                    .nutricion-protein-line.yellow
+                    .nutricion-fats-line.dark-grey
+                    .nutricion-carbs-line.light-grey
                 ul.nutrition-value-container
                     li.nutricion-info-proteins
                         .nutricion-info-circe.yellow
@@ -434,7 +446,7 @@ h2.block-title.d-flex.jb.fsb
         {title:"Контакты", link:""},
     ]
 
-nav.page-header 
+footer.page-header 
     .header-container 
         nav.top-header 
             .header-logotype 
@@ -486,6 +498,38 @@ nav.page-header
         p.agency-link Дизайн: Gouxit Agency / Разработка: Ledoffsky Agency
 
 //- menu for mobile version
+
+menu.bottom-menu 
+    button.bottom-button-item
+        .buttom-button-image
+            img(src=require("../images/menu-menu.png"))
+        span Меню
+
+    button.bottom-button-item
+        .buttom-button-image
+            img(src=require("../images/menu-search.png"))
+        span Поиск
+
+    button.bottom-button-item
+        .buttom-button-image
+            img(src=require("../images/menu-basket.png"))
+        span Коризна
+
+//- меню с каталогом
+menu.open-bottom-menu
+    ul.open-bottom-menu-container 
+        each menuCategory in menuCategories
+            li.open-bottom-menu-item
+                a(href=menuCategory.link).open-menu-link
+                    img(src=require("../images/" + menuCategory.image + ".png")).open-menu-image
+                    span.open-menu-title #{menuCategory.title}
+
+//- меню поиска
+menu.open-bottom-search 
+    .bottom-search-container 
+        input(type="search", name="" placeholder="Поиск по сайту").search
+        button.bottom-search-button 
+            img(src=require("../images/lupa.png"))
 
 
 
