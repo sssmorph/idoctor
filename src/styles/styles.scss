@@ -4,7 +4,7 @@
 @import "reset";
 @import "modificators";
 @import "uikit";
-
+@import "footer";
 body {
   font-family: Inter, sans-serif;
   font-size:14px;
@@ -2514,32 +2514,7 @@ h3{
           }
         }
       }
-      // вторая часть
-
-      .footer-basket-button-container{
-        @include respond(700px){
-          display: none;
-        }
-        .footer-basket-button{
-          border-radius: 90px;
-          padding: 16px 20px;
-          background: linear-gradient(95.02deg, #FECE00 38.11%, #FFDF57 93.2%);
-          display: flex;
-          flex-direction: row;
-          gap:8px;
-          align-items: center;
-          span:first-child{
-            font-size: 24px;
-          }
-          // .footer-button-title{
-
-
-          // }
-        }
-      }
     }
-
-
     .header-navigation {
       padding: 0px 32px 20px 32px;
       border-bottom-left-radius: 20px;
@@ -2638,35 +2613,7 @@ h3{
         .header-navigation-item:last-child{
           margin-left: auto;
         }
-        .footer-navigation-item{
-          color: rgba(33, 32, 31, 1);
-          font-size: 16px;
-          line-height: 100%;
-          .header-navigation-link{
-            text-decoration: none;
-            color:rgba(33, 32, 31, 1);
-            transition: .19s background-color linear;
-          }
-          .header-navigation-link:hover{
-            border-bottom: 2px solid rgba(254, 206, 0, 1);
-          }
-        }
-        .footer-navigation-link{
-          @include respond(700px){
-            display: none;
-          }
-          margin-left: auto;
-          & button{
-            border-radius: 8px;             
-            padding: 12px 20px;
-            text-decoration: none;
-            color:rgba(33, 32, 31, 1);
-            background-color: rgba(246, 247, 250, 1);
-            font-size: 15px;
-            font-weight: 500;
-            
-          }
-        }
+
         .header-search-container{
           display: flex;
           flex-direction: row;
@@ -2703,77 +2650,7 @@ h3{
       }
     }
   }
-  .footer-information{
-    padding: 24px 32px 12px 32px;
-    gap:12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 14px;
-    font-weight: 500;
-    color:rgba(148, 152, 166, 1);
-    @include respond(700px){
-      flex-direction: column;
-      padding-bottom: 20px;
-      background-color: rgba(255, 255, 255, 1);
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-    }
-    & a{
-      color:rgba(148, 152, 166, 1);
-      font-size: 14px;
-      font-weight: 400;
-    }
-    .footer-mail-link{
-      display: none;
-      @include respond(700px){
-        display: inline;
-      }
-    }
-    .offer-text{
-      display: none;
-      @include respond(700px){
-        display: inline;
-      }
-    }
-    .to-top-button{
-      display: none;
-      @include respond(700px){
-        display: inline;
-        border-radius: 10px;
-        padding: 12px;
-        background-color: rgba(234, 237, 244, 1);
-        width: 100%;
-        font-size: 15px;
-        font-weight: 600;
-        @include respond($tablet-sm){
-          font-size: 10px;
-          margin-top: 8px;
-        }
-      }
-    }
-  }
-footer{
-  @include respond(700px){
-    display: flex;
-    flex-direction: column;
-    gap:0;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
-  }
-  .header-container{
-    .header-navigation{
-      .header-navigation-container{
-        @include respond(700px){        
-          padding: 0 32px;
-          background-color: #fff;
-          margin-top:0;
-        }
-      }
-    }
-  }
-}
+
 // нижнее меню
 .bottom-menu{
   display: none;

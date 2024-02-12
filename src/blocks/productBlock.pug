@@ -439,32 +439,31 @@ h2.block-title.d-flex.jb.fsb
 - 
     var footerMenuCategoties = [
         {title:"Меню", link:""},
-        {title:"Акции", link:""},
         {title:"Оплата и доставка", link:""},
         {title:"Отзывы", link:""},
         {title:"О компании", link:""},
         {title:"Контакты", link:""},
     ]
 
-footer.page-header 
-    .header-container 
-        nav.top-header.shadow-box
-            .top-header-left-part
-                .header-logotype 
-                    img(src=require("../images/black-logo.png")).header-logotype-image
+footer.page-footer 
+    .footer-container 
+        nav.top-footer
+            .top-footer-left-part
+                .footer-logotype 
+                    img(src=require("../images/black-logo.png")).footer-logotype-image
                     .vertical-line
-                    span.header-logotype-title Доставка суши и роллов в Томске
+                    span.footer-logotype-title Доставка суши и роллов в Томске
                 .wrapper-adress-open-time
-                    .header-adress 
+                    .footer-adress 
                         span.icon-geo
                         .adress-info 
                             span.adress-info-title Томск, пр.Ленина, 41
                             a(href="").adress-info-link Смотреть на карте
-                    .header-open-time 
+                    .footer-open-time 
                         span.icon-watch 
                         p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
-            .top-header-right-part
-                .header-phone 
+            .top-footer-right-part
+                .footer-phone 
                     span.icon-phone 
                     .phone-info 
                         .phone-info-header 
@@ -472,26 +471,26 @@ footer.page-header
                             button.phone-button 
                                 span.icon-arrowl
                         a(href="").phone-info-link перезвоните мне
-                .header-social-media-container
-                    button.header-social-media-item
+                .footer-social-media-container
+                    button.footer-social-media-item
                         span.icon-vk 
-                    button.header-social-media-item 
+                    button.footer-social-media-item 
                         span.icon-telegram 
-                    button.header-social-media-item 
+                    button.footer-social-media-item 
                         span.icon-whatsup
                 .footer-basket-button-container
                     button.footer-basket-button
                         span.icon-basket 
                         span.footer-button-title Сделать заказ
 
-        .header-line 
+        .footer-line 
 
-        nav.header-navigation 
-            ul.header-navigation-container 
+        nav.footer-navigation 
+            ul.footer-navigation-container 
                 each category in footerMenuCategoties
                     li.footer-navigation-item
-                        a(href=category.link).header-navigation-link #{category.title}
-                li.footer-navigation-link 
+                        a(href=category.link).footer-navigation-link #{category.title}
+                li.footer-navigation-link-button
                     button(href="") Наверх
     .footer-information 
         p.copyright ©2024 Piko Kitchen. Все права защищены
@@ -501,23 +500,26 @@ footer.page-header
         p.agency-link Дизайн: Gouxit Agency / Разработка: Ledoffsky Agency
         button(href="").to-top-button Наверх
 
+
+
+
 //- menu for mobile version
 
-menu.bottom-menu 
-    button.bottom-button-item
-        .buttom-button-image
-            img(src=require("../images/menu-menu.png"))
-        span Меню
+//- menu.bottom-menu 
+//-     button.bottom-button-item
+//-         .buttom-button-image
+//-             img(src=require("../images/menu-menu.png"))
+//-         span Меню
 
-    button.bottom-button-item
-        .buttom-button-image
-            img(src=require("../images/menu-search.png"))
-        span Поиск
+//-     button.bottom-button-item
+//-         .buttom-button-image
+//-             img(src=require("../images/menu-search.png"))
+//-         span Поиск
 
-    button.bottom-button-item
-        .buttom-button-image
-            img(src=require("../images/menu-basket.png"))
-        span Коризна
+//-     button.bottom-button-item
+//-         .buttom-button-image
+//-             img(src=require("../images/menu-basket.png"))
+//-         span Коризна
 
 //- меню с каталогом
 menu.open-bottom-menu
@@ -538,47 +540,47 @@ menu.open-bottom-search
 
 //- burger menu
 
-menu.burger-menu
-    .burger-header
-        .header-container
-            .header-logotype 
-                img(src=require("../images/black-logo.png")).header-logotype-image
-                .vertical-line
-                span.header-logotype-title Доставка суши и роллов в Томске    
-            button.burger-close 
-        .bottom-search-container 
-            input(type="search", name="" placeholder="Поиск по сайту").search
-            button.bottom-search-button 
-                img(src=require("../images/lupa.png"))
-        .header-head 
-            ul.head-content-container 
-                each item in headLinks
-                    li.content-item-container
-                        a(href=item.link).item-content #{item.linkText}
-    .burger-footer 
-        .top-header-left-part
-            .wrapper-adress-open-time
-                .header-adress 
-                    span.icon-geo
-                    .adress-info 
-                        span.adress-info-title Томск, пр.Ленина, 41
-                        a(href="").adress-info-link Смотреть на карте
-                .header-open-time 
-                    span.icon-watch 
-                    p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
-        .top-header-right-part
-            .header-phone 
-                span.icon-phone 
-                .phone-info 
-                    .phone-info-header 
-                        span.phone-info-content +7 (923) 406-11-12
-                        button.phone-button 
-                            span.icon-arrowl
-                    a(href="").phone-info-link перезвоните мне
-            .header-social-media-container
-                button.header-social-media-item
-                    span.icon-vk 
-                button.header-social-media-item 
-                    span.icon-telegram 
-                button.header-social-media-item 
-                    span.icon-whatsup
+//- menu.burger-menu
+//-     .burger-header
+//-         .header-container
+//-             .header-logotype 
+//-                 img(src=require("../images/black-logo.png")).header-logotype-image
+//-                 .vertical-line
+//-                 span.header-logotype-title Доставка суши и роллов в Томске    
+//-             button.burger-close 
+//-         .bottom-search-container 
+//-             input(type="search", name="" placeholder="Поиск по сайту").search
+//-             button.bottom-search-button 
+//-                 img(src=require("../images/lupa.png"))
+//-         .header-head 
+//-             ul.head-content-container 
+//-                 each item in headLinks
+//-                     li.content-item-container
+//-                         a(href=item.link).item-content #{item.linkText}
+//-     .burger-footer 
+//-         .top-header-left-part
+//-             .wrapper-adress-open-time
+//-                 .header-adress 
+//-                     span.icon-geo
+//-                     .adress-info 
+//-                         span.adress-info-title Томск, пр.Ленина, 41
+//-                         a(href="").adress-info-link Смотреть на карте
+//-                 .header-open-time 
+//-                     span.icon-watch 
+//-                     p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
+//-         .top-header-right-part
+//-             .header-phone 
+//-                 span.icon-phone 
+//-                 .phone-info 
+//-                     .phone-info-header 
+//-                         span.phone-info-content +7 (923) 406-11-12
+//-                         button.phone-button 
+//-                             span.icon-arrowl
+//-                     a(href="").phone-info-link перезвоните мне
+//-             .header-social-media-container
+//-                 button.header-social-media-item
+//-                     span.icon-vk 
+//-                 button.header-social-media-item 
+//-                     span.icon-telegram 
+//-                 button.header-social-media-item 
+//-                     span.icon-whatsup

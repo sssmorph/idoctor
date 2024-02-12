@@ -1,0 +1,444 @@
+// контейнер футера
+.page-footer{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    @include respond(800px){
+        background-color: #fff;
+        box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+        border-radius: 10px;
+        padding: 24px 32px;
+    }
+}
+.footer-container{
+    padding: 24px 32px;
+    background-color: #fff;
+    box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+    border-radius: 20px;
+
+    @include respond(800px){
+        padding: 0;
+        background-color: none;
+        box-shadow: none;
+    } 
+}
+// кнопка корзины
+.footer-basket-button-container{
+    @include respond(700px){
+      display: none;
+    }
+    .footer-basket-button{
+      border-radius: 90px;
+      padding: 16px 20px;
+      background: linear-gradient(95.02deg, #FECE00 38.11%, #FFDF57 93.2%);
+      display: flex;
+      flex-direction: row;
+      gap:8px;
+      align-items: center;
+      span:first-child{
+        font-size: 24px;
+      }
+    }
+}
+
+// контейнер кружков соц-сетей
+.footer-social-media-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:8px;
+    @include respond($large){
+      margin-left: auto;
+      margin-right: 50px;
+    }
+    @include respond($tablet){
+      margin-right: 20px;
+    }
+    @include respond(700px){
+        margin-right: 0;
+    }
+    @include respond($tablet-sm){
+      gap:4px;
+      margin-right: 0;
+    }
+    .footer-social-media-item{
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: rgba(246, 247, 250, 1);
+      @include respond($large){
+        width: 38px;
+        height: 38px;
+      }
+      @include respond($tablet-sm){
+        width: 30px;
+        height: 30px;
+      }
+      span{
+        font-size: 22px;
+        @include respond($tablet-sm){
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+// контейнер с копирайт инфой
+
+.footer-information{
+    gap:12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color:rgba(148, 152, 166, 1);
+    padding: 0 32px 24px 32px;
+    @include respond(800px){
+      flex-direction: column;
+      padding: 0;
+    }
+    @include respond($tablet-sm){
+        gap:10px;
+    }
+    a{
+      color:rgba(148, 152, 166, 1);
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .footer-mail-link{
+      display: none;
+      @include respond(800px){
+        display: inline;
+      }
+      @include respond($tablet-sm){
+        font-size: 10px;
+      }
+    }
+    .offer-text{
+      display: none;
+      @include respond(800px){
+        display: inline;
+      }
+      @include respond($tablet-sm){
+        font-size: 10px;
+      }
+    }
+    .to-top-button{
+      display: none;
+      @include respond(800px){
+        display: inline;
+        border-radius: 10px;
+        padding: 12px;
+        background-color: rgba(234, 237, 244, 1);
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 12px;
+        @include respond($tablet-sm){
+          font-size: 10px;
+        }
+      }
+    }
+    .copyright{
+        @include respond($tablet-sm){
+            font-size: 12px;            
+        }
+    }
+    .privacy-policy{
+        @include respond($tablet-sm){
+            font-size: 10px;    
+        }
+
+    }
+    .agency-link{
+        @include respond($tablet-sm){
+            font-size: 10px;
+        }
+    }
+    
+
+}
+
+// логотип, адрес, опен тайм
+.top-footer-left-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:10px;
+    align-items: center;
+    flex: 1 0 0;
+    @include respond($large){
+      border-bottom: 1px solid rgba(234, 234, 237, 1);
+      padding-bottom: 20px;
+    }
+    @include respond($tablet-sm){
+      padding-bottom: 12px;
+    }
+    .footer-logotype{
+      display: flex;
+      flex-direction: row;
+      gap:24px;
+      align-items: center;
+      height: 46px;
+      @include respond($large){
+        gap:16px;
+      }
+      @include respond($tablet-lg){
+        gap:12px;
+      }
+      @include respond($tablet-sm){
+        height: 30px;
+        padding-right: 10px;
+        border-right: 1px solid rgba(234, 234, 237, 1);
+      }
+      .footer-logotype-image{
+        transform: translateY(-10.8%);
+        height: 100%;
+      }
+      .vertical-line{
+        width: 1px;
+        background-color: rgba(234, 234, 237, 1);
+        height: 100%;
+      }
+      .footer-logotype-title{
+        width: 129px;
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 500;
+        word-wrap: break-word;
+        @include respond($tablet-sm){
+          font-size: 10px;
+          line-height: 125%;
+          width: 92px;
+        }
+      }
+    }
+    .wrapper-adress-open-time{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 100%;
+      gap: 10px;
+      @include respond($tablet){
+        justify-content: space-between;
+        margin-left: 20px;
+      }
+      @include respond(800px){
+        justify-content: flex-end;
+        margin-left: 0;
+      }
+
+    //   адрес футер
+      .footer-adress{
+        display: flex;
+        flex-direction: row;
+        gap:8px;
+        align-items: center;
+        @include respond($tablet-sm){
+            gap:4px;
+        }
+        & span{
+          font-size: 24px;
+        }
+        .adress-info{
+          display: flex;
+          flex-direction: column;
+          gap:4px;
+          .adress-info-title{
+            font-size: 14px;
+            line-height: 100%;
+            font-weight: 500;
+            color:rgba(33, 32, 31, 1);
+            @include respond($tablet-sm){
+                color:rgba(148, 152, 166, 1);
+                font-size: 10px;
+                line-height: 125%;
+                word-wrap: break-word;
+                width: 80px;
+            }
+          }
+          .adress-info-link{
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 100%;
+            color:rgba(125, 128, 139, 1);
+            @include respond($tablet-sm){
+                display: none;
+            }
+          }
+        }
+      }
+    //   время работы футер
+      .footer-open-time{
+        display: flex;
+        flex-direction: row;
+        gap:8px;
+        align-items: center;
+        @include respond(800px){
+          display: none;
+        }
+        & span{
+          font-size: 24px;
+        }
+        .open-time-info{
+          font-size: 14px;
+          line-height: 135%;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+// соц.сети, телефон, карзина
+.top-footer-right-part{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:5px;
+    width: 100%;
+    flex: 1 0 0;
+    .footer-phone{
+      display: flex;
+      flex-direction: row;
+      gap:8px;
+      align-items: center;
+      margin-left: 10px;
+      @include respond($large){
+        margin-left: 0;
+      }
+      @include respond($tablet-sm){
+        margin-left:0;
+        gap:4px;
+      }
+      & span{
+        font-size: 24px;
+        @include respond($tablet-sm){
+          font-size: 16px;
+        }
+      }
+      .phone-info{
+        display: flex;
+        flex-direction: column;
+        gap:4px;
+        .phone-info-header{
+          display: flex;
+          flex-direction: row;
+          gap:8px;
+          align-items: center;
+          .phone-info-content{
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 100%;
+            letter-spacing: -2%;
+            @include respond($large){
+              font-size: 16px;
+            }
+            @include respond($tablet-sm){
+              font-size: 13px;
+            }
+          }
+          .phone-button{
+            border-radius: 2px;
+            width: 17px;
+            height: 16px;
+            background-color: rgba(246, 247, 250, 1);
+            transform: rotate(-0.25turn);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include respond($tablet-sm){
+              width: 14px;
+              height: 13.18px;
+              
+            }
+            span{    
+              font-size: 8px;
+              color: rgba(148, 152, 166, 1);
+              @include respond($tablet-sm){
+                font-size: 6px;
+              }
+            }
+          }
+        }
+        .phone-info-link{
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 100%;
+          color:rgba(125, 128, 139, 1);
+          @include respond($tablet-sm){
+            font-size: 10px;
+          }
+        }
+      }
+    }
+}
+// контейнер для левой и правой части
+.top-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include respond($large){
+      flex-direction: column;
+      gap:20px;
+    }
+  }
+// сепаратор между ссылками на страницы и инфой в хедере
+.footer-line{
+    margin: 24px 0;
+    height: 1px;
+    background-color: rgba(234, 234, 237, 1);
+    @include respond(800px){
+        margin: 16px 0;
+    }
+}
+// ссылки на другие страницы
+.footer-navigation {
+    @include respond(800px){
+      background: none;
+      border-radius: 0;
+      padding: 0;
+    }
+}
+.footer-navigation-container{
+    display: flex;
+    flex-direction: row;
+    gap:24px;
+    align-items: center;
+    @include respond(800px){
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(234, 234, 237, 1);
+        gap:12px;
+    }
+    
+}
+.footer-navigation-link{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(33, 32, 31, 1);
+    text-decoration: none;
+    @include respond(800px){
+        color:rgba(148, 152, 166, 1);
+        font-weight: 500;
+        font-size: 14px;
+    }
+    @include respond($tablet-sm){
+        font-size: 10px;
+    }
+}
+.footer-navigation-item:first-child{
+    @include respond(800px){
+        display: none;
+    }
+}
+.footer-navigation-link-button{
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgba(246, 247, 250, 1);
+    font-size: 15px;
+    font-weight: 500;
+    @include respond(800px){
+        display: none;
+    }
+}
+
+
