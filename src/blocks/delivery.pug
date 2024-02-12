@@ -1,0 +1,61 @@
+h2.delivery-payments-title Доставка и оплата
+
+- var adress = 'Томск, пр.Ленина, 41';
+- var openTime = 'с 09:30 до 23:00';
+- var deliveryTime = '~60-120 часов';
+
+section.delivery-payments
+    .delivery-information-block-container
+        ul.delivery-information-block.base-block 
+            li.about-card-container
+                .about-card-image-container
+                    img(src=require('../images/balls.png')).about-card-image
+                .about-card-content
+                    h3.about-card-title Самовывоз по адресу
+                    span.about-card-text #{adress}
+                    a(href="https://yandex.ru/maps/-/CDu-7QN1" target="_blank").about-card-link Смотреть на карте
+            .list-separator
+            li.about-card-container
+                .about-card-image-container
+                    img(src=require('../images/delivery.png')).about-card-image
+                .about-card-content
+                    h3.about-card-title #{openTime}
+                    span.about-card-text Принимаем и доставляем заказы
+            .list-separator
+            li.about-card-container
+                .about-card-image-container
+                    img(src=require('../images/watch.png')).about-card-image
+                .about-card-content
+                    h3.about-card-title #{deliveryTime}
+                    span.about-card-text Среднее время доставки
+
+        ul.payments-information-block.base-block 
+            h3.title-of-section-small Оплата
+            li.about-card-container 
+                .about-card-image-container
+                    img(src=require('../images/wallet.png')).about-card-image
+                .about-card-content
+                    h3.about-card-title Наличными
+                    span.about-card-text Оплата наличными курьеру или в ресторане при получении заказа.
+            .list-separator
+            li.about-card-container 
+                .about-card-image-container
+                    img(src=require('../images/credit-card.png')).about-card-image
+                .about-card-content
+                    h3.about-card-title Банковской картой
+                    span.about-card-text Оплата заказа банковской картой при получении курьеру или в ресторане. 
+                    span.about-card-text Принимаются банковские карты MasterCard, Visa, МИР.
+    .about-delivery.base-block
+        h3.title-of-section-large Про доставку
+        .about-delivery-description
+            img(src=require("../images/delivery-description.png")).about-delivery-description-image
+            span.about-delivery-description-text Минимальная сумма заказа для бесплатной доставки зависит от вашего района:
+        ul.about-district
+            li.district-item 
+                .district-color 
+                span.district-name вапвап
+                .district-separator 
+                span.district-price вапвап
+                .district-time вап
+        .about-delivery-map
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae8d75bf3568c5a1359972c693d07060730480b8915fc9676b2d3351e74019876&amp;lang=ru_RU&amp;scroll=true"></script>

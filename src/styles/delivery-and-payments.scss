@@ -1,0 +1,185 @@
+.delivery-payments-title{
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 32px;
+    letter-spacing: -4%;
+    line-height: 100%;
+    @include respond($tablet-sm){
+        margin-bottom: 24px;
+        font-size: 18px;
+    }
+}
+// граница и паддинг для блока
+.base-block{
+    padding: 32px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+    @include respond($tablet){
+        padding: 16px;
+        border-radius: 10px;
+    }
+}
+// разделитель списка
+.list-separator{
+    height: 2px;
+    background-color: rgba(238, 239, 245, 1);
+    margin: 24px 0;
+    @include respond($tablet-sm){
+        margin: 12px 0;
+    }
+}
+// заголовок внутри блока
+.title-of-section-small{
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    color:rgba(33, 32, 31, 1);
+    margin-bottom: 24px;
+    @include respond($laptop){
+        margin-bottom:20px;
+    }
+    @include respond($tablet){
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+}
+.title-of-section-large{
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(33, 32, 31, 1);
+    line-height: 135%;
+    margin-bottom: 0;
+    @include respond($tablet-sm){
+        font-size: 16px;
+        line-height: 100%;
+    }
+}
+// общий блок
+.delivery-payments{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap:32px;
+    @include respond($desktop){
+        gap:24px;
+    }
+    @include respond($laptop){
+        gap:20px
+    }
+    @include respond($tablet-lg){
+        gap:16px
+    }
+    @include respond($tablet){
+        gap:12px;
+    }
+    @include respond($tablet-sm){
+        gap:8px;
+    }
+}
+// блок слева с информацией о доставке и оплате
+.delivery-information-block-container{
+    display: flex;
+    flex-direction: column;
+    gap:32px;
+    @include respond($desktop){
+        gap:24px;
+    }
+    @include respond($laptop){
+        gap:20px
+    }
+    @include respond($tablet-lg){
+        gap:16px
+    }
+    @include respond($tablet){
+        gap:12px;
+    }
+    @include respond($tablet-sm){
+        gap:8px;
+    }
+}
+.about-card-container{
+    display: flex;
+    flex-direction: row;
+    gap:24px;
+    align-items: center;
+
+    @include respond($tablet-sm){
+      grid-template-columns: 50px 1fr;
+    }
+    .about-card-image{
+      padding: 8px;
+      border-radius: 8px;
+      width: 64px;
+      height: 64px;
+      background-color: rgba(246, 246, 248, 1);
+    }
+    .about-card-content{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .about-card-title{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 105%;
+        margin: 0;
+      }
+      .about-card-text{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 135%;
+        color: rgba(148, 152, 166, 1);
+      }
+      .about-card-link{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: rgba(125, 128, 139, 1);
+
+      }
+    }
+}     
+// блок с картой
+.about-delivery{
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+    @include respond($laptop){
+        gap:20px;
+    }
+    @include respond($tablet){
+        gap:16px;
+    }
+}
+.about-delivery-description{
+    padding: 12px 20px;
+    background-color: rgba(255, 249, 223, 1);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+    align-items: center;
+    @include respond($tablet-sm){
+        gap:12px;
+    }
+}
+.about-delivery-description-image{
+    @include respond($tablet-sm){
+        height: 16px;
+    }
+}
+.about-delivery-description-text{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 140%;
+    color:rgba(33, 32, 31, 1);
+    @include respond($tablet-sm){
+        font-size: 10px;
+        line-height: 125%;
+        color:rgba(99, 94, 73, 1);
+    }
+}
+.about-delivery-map{
+    *{
+        border-radius: 14px;
+    }
+}
