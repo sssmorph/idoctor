@@ -107,3 +107,9 @@
 .light-grey{
     background-color: rgba(199, 202, 213, 1);
 }
+
+.shadow-box{
+    @include respond(700px){
+        box-shadow: none;
+    }
+}

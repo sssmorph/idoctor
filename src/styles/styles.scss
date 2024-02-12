@@ -2129,6 +2129,8 @@ h3{
     }
   }
 }
+
+
 // хеддер футер
 .page-header{
   display: flex;
@@ -2515,6 +2517,9 @@ h3{
       // вторая часть
 
       .footer-basket-button-container{
+        @include respond(700px){
+          display: none;
+        }
         .footer-basket-button{
           border-radius: 90px;
           padding: 16px 20px;
@@ -2647,7 +2652,9 @@ h3{
           }
         }
         .footer-navigation-link{
-          
+          @include respond(700px){
+            display: none;
+          }
           margin-left: auto;
           & button{
             border-radius: 8px;             
@@ -2693,6 +2700,7 @@ h3{
         }
 
       }
+      }
     }
   }
   .footer-information{
@@ -2704,8 +2712,12 @@ h3{
     font-size: 14px;
     font-weight: 500;
     color:rgba(148, 152, 166, 1);
-    @include respond($tablet-sm){
+    @include respond(700px){
       flex-direction: column;
+      padding-bottom: 20px;
+      background-color: rgba(255, 255, 255, 1);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
     & a{
       color:rgba(148, 152, 166, 1);
@@ -2714,23 +2726,55 @@ h3{
     }
     .footer-mail-link{
       display: none;
-      @include respond($tablet-sm){
+      @include respond(700px){
         display: inline;
       }
     }
     .offer-text{
       display: none;
-      @include respond($tablet-sm){
+      @include respond(700px){
         display: inline;
+      }
+    }
+    .to-top-button{
+      display: none;
+      @include respond(700px){
+        display: inline;
+        border-radius: 10px;
+        padding: 12px;
+        background-color: rgba(234, 237, 244, 1);
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        @include respond($tablet-sm){
+          font-size: 10px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+footer{
+  @include respond(700px){
+    display: flex;
+    flex-direction: column;
+    gap:0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 15px 25px 0px rgba(234, 234, 237, 0.36);
+  }
+  .header-container{
+    .header-navigation{
+      .header-navigation-container{
+        @include respond(700px){        
+          padding: 0 32px;
+          background-color: #fff;
+          margin-top:0;
+        }
       }
     }
   }
 }
-.page-header:last-child{
-  margin-bottom: 0;
-  gap:0;
-}
-// базовое меню
+// нижнее меню
 .bottom-menu{
   display: none;
   background-color: rgba(255, 255, 255, 1);
@@ -2821,9 +2865,13 @@ h3{
       height: 16px;
     }
   }
-  
 }
-// менюшка с категориями товаров
+@include respond(800px){
+
+ 
+}
+
+// меню с категориями товаров
 .open-bottom-menu{
   position: fixed;
   bottom: 55px;
@@ -2998,6 +3046,7 @@ h3{
         flex-direction: row;
         width: 100%;
         gap: 10px;
+        margin-left: auto;
         .header-adress{
           display: flex;
           flex-direction: row;

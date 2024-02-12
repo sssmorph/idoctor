@@ -448,7 +448,7 @@ h2.block-title.d-flex.jb.fsb
 
 footer.page-header 
     .header-container 
-        nav.top-header 
+        nav.top-header.shadow-box
             .top-header-left-part
                 .header-logotype 
                     img(src=require("../images/black-logo.png")).header-logotype-image
@@ -499,6 +499,7 @@ footer.page-header
         p.offer-text Информация на сайте носит справочный характер. Внешний вид и состав блюд могут отличаться от представленных на сайте. Подробности у операторов. акции и скидки не суммируются и не распространяются на наборы, десерты, напитки
         a(href="").privacy-policy Политика конфиденциальности
         p.agency-link Дизайн: Gouxit Agency / Разработка: Ledoffsky Agency
+        button(href="").to-top-button Наверх
 
 //- menu for mobile version
 
@@ -544,7 +545,7 @@ menu.burger-menu
                 img(src=require("../images/black-logo.png")).header-logotype-image
                 .vertical-line
                 span.header-logotype-title Доставка суши и роллов в Томске    
-            .burger-close 
+            button.burger-close 
         .bottom-search-container 
             input(type="search", name="" placeholder="Поиск по сайту").search
             button.bottom-search-button 
