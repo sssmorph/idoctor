@@ -535,4 +535,49 @@ menu.open-bottom-search
             img(src=require("../images/lupa.png"))
 
 
+//- burger menu
 
+menu.burger-menu
+    .burger-header
+        .header-container
+            .header-logotype 
+                img(src=require("../images/black-logo.png")).header-logotype-image
+                .vertical-line
+                span.header-logotype-title Доставка суши и роллов в Томске    
+            .burger-close 
+        .bottom-search-container 
+            input(type="search", name="" placeholder="Поиск по сайту").search
+            button.bottom-search-button 
+                img(src=require("../images/lupa.png"))
+        .header-head 
+            ul.head-content-container 
+                each item in headLinks
+                    li.content-item-container
+                        a(href=item.link).item-content #{item.linkText}
+    .burger-footer 
+        .top-header-left-part
+            .wrapper-adress-open-time
+                .header-adress 
+                    span.icon-geo
+                    .adress-info 
+                        span.adress-info-title Томск, пр.Ленина, 41
+                        a(href="").adress-info-link Смотреть на карте
+                .header-open-time 
+                    span.icon-watch 
+                    p.open-time-info Принимаем заказы<br>c 09:30 до 23:00
+        .top-header-right-part
+            .header-phone 
+                span.icon-phone 
+                .phone-info 
+                    .phone-info-header 
+                        span.phone-info-content +7 (923) 406-11-12
+                        button.phone-button 
+                            span.icon-arrowl
+                    a(href="").phone-info-link перезвоните мне
+            .header-social-media-container
+                button.header-social-media-item
+                    span.icon-vk 
+                button.header-social-media-item 
+                    span.icon-telegram 
+                button.header-social-media-item 
+                    span.icon-whatsup
