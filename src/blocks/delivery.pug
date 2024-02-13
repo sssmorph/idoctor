@@ -4,7 +4,15 @@ h2.delivery-payments-title Доставка и оплата
 - var openTime = 'с 09:30 до 23:00';
 - var deliveryTime = '~60-120 часов';
 
-section.delivery-payments
+-
+    var districtInformation = [
+        {color: ".north-district", name: "Северный парк", price: "900", time: "120"},
+        {color: ".leninsky-district", name: "Ленинский район", price: "700", time: "60"},
+        {color: ".sovet-district", name: "Советский район", price: "700", time: "60"},
+        {color: ".south-gate", name: "Южные ворота", price: "900", time: "120"},
+        {color: ".zonalnaya", name: "Зональная", price: "800", time: "90"},
+    ]
+section.delivery-payments-information-block
     .delivery-information-block-container
         ul.delivery-information-block.base-block 
             li.about-card-container
@@ -51,11 +59,12 @@ section.delivery-payments
             img(src=require("../images/delivery-description.png")).about-delivery-description-image
             span.about-delivery-description-text Минимальная сумма заказа для бесплатной доставки зависит от вашего района:
         ul.about-district
-            li.district-item 
-                .district-color 
-                span.district-name вапвап
-                .district-separator 
-                span.district-price вапвап
-                .district-time вап
-        .about-delivery-map
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae8d75bf3568c5a1359972c693d07060730480b8915fc9676b2d3351e74019876&amp;lang=ru_RU&amp;scroll=true"></script>
+            each district in districtInformation
+                li.district-item 
+                    .district-color #{district.color}
+                    span.district-name #{district.name}
+                    .district-separator 
+                    span.district-price от #{district.price}₽ 
+                    .district-separator 
+                    .district-time #{district.time} мин.
+        script(type="text/javascript", charset="utf-8", async, src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae8d75bf3568c5a1359972c693d07060730480b8915fc9676b2d3351e74019876&amp;lang=ru_RU&amp;scroll=true").about-delivery-map
