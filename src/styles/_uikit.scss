@@ -113,7 +113,16 @@
         box-shadow: none;
     }
 }
-
+.district-color{
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    @include respond($tablet-sm){
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+    }
+}
 
 .north-district{
     background-color: rgba(103, 211, 75, 1);

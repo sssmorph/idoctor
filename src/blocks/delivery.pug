@@ -6,12 +6,12 @@ h2.delivery-payments-title Доставка и оплата
 
 -
     var districtInformation = [
-        {color: ".north-district", name: "Северный парк", price: "900", time: "120"},
-        {color: ".leninsky-district", name: "Ленинский район", price: "700", time: "60"},
-        {color: ".sovet-district", name: "Советский район", price: "700", time: "60"},
-        {color: ".south-gate", name: "Южные ворота", price: "900", time: "120"},
-        {color: ".zonalnaya", name: "Зональная", price: "800", time: "90"},
-    ]
+        {color: "district-color north-district", name: "Северный парк", price: "900", time: "120"},
+        {color: "district-color leninsky-district", name: "Ленинский район", price: "700", time: "60"},
+        {color: "district-color sovet-district", name: "Советский район", price: "700", time: "60"},
+        {color: "district-color south-gate", name: "Южные ворота", price: "900", time: "120"},
+        {color: "district-color zonalnaya", name: "Зональная", price: "800", time: "90"},
+    ] 
 section.delivery-payments-information-block
     .delivery-information-block-container
         ul.delivery-information-block.base-block 
@@ -61,7 +61,7 @@ section.delivery-payments-information-block
         ul.about-district
             each district in districtInformation
                 li.district-item 
-                    .district-color #{district.color}
+                    div(class=district.color)
                     span.district-name #{district.name}
                     .district-separator 
                     span.district-price от #{district.price}₽ 
