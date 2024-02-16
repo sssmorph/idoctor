@@ -352,116 +352,143 @@ h3{
       }
     }
   }
-  button{
+  .basket-controls{
     margin-left: auto;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    border-radius: 50px;
-    @include respond($large){
-      padding: 8px 10px;
-      
-    }
     @include respond($mobile){
-      padding: 8px 12px;
-      height: 32px;
-      width: 78px;
-      align-items: center;
-      font-size: 11px;
-      margin: 0;
-      margin-right: 10px;
+      margin:0;
     }
-    .price{
-      display: none;
-      @include respond($mobile){
-        display: inline;
-      }
-    }
-    .icon-basket{
-      font-size: 24px;
-      margin-right: 8px;
+    .count-in-basket{
+      display:none;
+      justify-content: center;
+      color: $black-text;
+      font-size: 15px;
+      width: 144px;
+      height: 56px;
+      padding: 16px 20px;
+      gap: 12px;
+      background:#F6F6F8;
+      border-radius: 90px;
+      margin-left: auto;
       @include respond($large){
-        margin-right: 4px;
-        font-size: 18px;
-      }
-      @include respond($mobile){
+        width: 110px;
+        height: 42px;
         font-size: 11px;
-        margin-right: 4px;
+        padding: 8px 10px;
       }
-    }
-    .title{
       @include respond($mobile){
+        padding: 8px 12px;
+        font-size: 11px;
+        width: 78px;
+        height: 32px;
+        margin: 0 8px;
+        gap: 2px;
+      }
+      button{
+        border: 0;
+        padding: 0;
+        background: #F6F6F8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .minus{
+        @include respond($desktop){
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .plus{
+        @include respond($desktop){
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &>.base-button{
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      padding:16px 20px;
+      .price{
         display: none;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1em;
+      }
+      @include respond($mobile){
+        background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+        border:none;
+        .title{
+          display: none;
+        }
+        .price{
+          display: inline-block;
+        }
+      }
+      @include respond($large){
+        padding: 8px 10px;
+      }
+      @include respond($mobile){
+        padding: 8px 12px;
+        height: 32px;
+        font-size: 11px;
+        margin-right: 10px;
+      }
+      .icon-basket{
+        font-size: 24px;
+        margin-right: 8px;
+        @include respond($large){
+          margin-right: 4px;
+          font-size: 18px;
+        }
+        @include respond($mobile){
+          font-size: 13px;
+          transform:translateY(-1px);
+          margin-right: 3px;
+        }
       }
     }
-  }
-  .in-basket{
-    width: 56px;
-    height: 56px;
-    margin-left:8px;
-    background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
-    border:0;
-    position: relative;
-    @include respond($large){
-      margin-left: 4px;
-      width: 42px;
-      height: 42px;
-    }
-    @include respond($mobile){
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      padding: 16px;
-    }
-    span{
-      position: absolute;
-      top:50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    span:last-child{
-      display: none;
-    }
-  }
-  .count-in-basket{
-    color: $black-text;
-    font-size: 15px;
-    width: 144px;
-    height: 56px;
-    padding: 16px 20px;
-    gap: 12px;
-    background:#F6F6F8;
-    border-radius: 90px;
-    margin-left: auto;
-    @include respond($large){
-      width: 110px;
-      height: 42px;
-      font-size: 11px;
-      padding: 8px 10px;
-    }
-    @include respond($mobile){
-      padding: 8px 12px;
-      font-size: 11px;
-      width: 78px;
-      height: 32px;
-      margin: 0 8px;
-      gap: 2px;
-    }
-    button{
-      border: 0;
-      padding: 0;
-      background: #F6F6F8;
-    }
-    .minus{
-      @include respond($desktop){
-        width: 18px;
-        height: 18px;
+    &.added{
+      .count-in-basket{
+        display: flex;
       }
-    }
-    .plus{
-      @include respond($desktop){
-        width: 18px;
-        height: 18px;
+      &>.base-button{
+        pointer-events: none;
+        .icon-basket{
+          margin-right: 0;
+        }
+        @include respond($mobile)
+        {
+          display: none;
+        }
+        width: 56px;
+        height: 56px;
+        margin-left:8px;
+        background: linear-gradient(95deg, #FECE00 38.11%, #FFDF57 93.2%);
+        border:0;
+        position: relative;
+        @include respond($large){
+          margin-left: 4px;
+          width: 42px;
+          height: 42px;
+        }
+        @include respond($mobile){
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          padding: 16px;
+        }
+        span{
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        span:last-child{
+          display: none;
+        }
       }
     }
   }
@@ -569,7 +596,7 @@ h3{
           font-size: 10px;
         }
       }
-      button{
+      .base-button{
         padding: 20px;
         gap:12px;
         display: flex;
@@ -1816,7 +1843,7 @@ h3{
             }
           }
         }  
-        & button{
+        .base-button{
           border-radius: 90px;
           padding: 16px 20px;
           display: flex;
@@ -2539,7 +2566,7 @@ h3{
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
         gap:38.5px;
         @include respond($large){
@@ -2561,6 +2588,12 @@ h3{
           gap:4px;
           &::-webkit-scrollbar{
             display: none;
+          }
+        }
+        .search{
+          margin-left:auto;
+          @include respond(800px){
+            display:none;
           }
         }
         .header-navigation-item{
@@ -2592,29 +2625,26 @@ h3{
             border-bottom: 2px solid rgba(254, 206, 0, 1);
           }
         }
-        .header-navigation-item:first-child{
-          background-color: rgba(255, 249, 223, 1);
-          border-radius: 8px;
-          padding: 8px 12px;
-          display: flex;
-          flex-direction: row;
-          gap:8px;
-          align-items: center;
-          @include respond(800px){
-            background-color: #fff;
-
-          }
-          img{
-            width: 20px;
-            height: 20px;
-            @include respond(800px){
-              display: none;
-            }
-          }
-        }
-        .header-navigation-item:last-child{
-          margin-left: auto;
-        }
+        //.header-navigation-item:first-child{
+        //  background-color: rgba(255, 249, 223, 1);
+        //  border-radius: 8px;
+        //  padding: 8px 12px;
+        //  display: flex;
+        //  flex-direction: row;
+        //  gap:8px;
+        //  align-items: center;
+        //  @include respond(800px){
+        //    background-color: #fff;
+        //
+        //  }
+        //  img{
+        //    width: 20px;
+        //    height: 20px;
+        //    @include respond(800px){
+        //      display: none;
+        //    }
+        //  }
+        //}
 
         .header-search-container{
           display: flex;
